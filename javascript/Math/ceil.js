@@ -7,5 +7,8 @@ console.log( '"NaN" => ' + Math.ceil('NaN') );
 console.log( 'NaN => ' + Math.ceil(NaN) );
 console.log( '"456.21" => ' + Math.ceil('456.21') );
 console.log( '"13.84" => ' + Math.ceil('13.84') );
+console.log( '-31.13 => ' + Math.ceil(-31.13) );
 
 // Dica: Math.ceil() faz coerção de tipo
+// Dica: Em relação aos números negativos, a função arredonda para cima 
+// em direção ao 0 !!!
