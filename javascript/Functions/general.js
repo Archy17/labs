@@ -24,7 +24,7 @@ function imprimiValor( valor ) {
   console.log( valor );
   console.log( arguments.length );
   console.log( arguments.callee ); // faz referência a função em execução
-  console.log( arguments.caller ); // faz referência a função que a chamou
+  console.log( arguments.callee.caller ); // faz referência a função que a chamou
 
 }
 
