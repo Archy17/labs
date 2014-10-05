@@ -14,6 +14,7 @@ var guitars = [ 'Ibanez', 'Music Man', 'PRS' ];
 
 console.log( guitars.concat( 'Gibson' ) );
 console.log( guitars.concat( [ 'Fender', 'Mayones' ] ) );
+console.log( guitars.concat( [[ 'Fender', 'Mayones' ]] ) );
 console.log( guitars.concat( function test() { /* code here */ } ) );
 console.log( guitars.concat( { model: 'Caparison' } ) );
 
