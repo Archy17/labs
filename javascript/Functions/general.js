@@ -35,3 +35,14 @@ function chamaFuncao( fn ) {
 chamaFuncao( imprimiValor );
 
 // arguments.callee é muito bom para recursão!
+
+// Closures nada mais são que funções com acesso ao contexto que as engloba
+function greet( name ) {
+  return function() {
+    return 'Olá Sr(a) ' + name;
+  };
+}
+
+var fn = greet( 'Eric Douglas' );
+
+console.log( fn() );
