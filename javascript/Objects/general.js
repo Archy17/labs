@@ -79,6 +79,7 @@ console.log( mm2.comparePrice( { brand: 'Jackson', model: 'Soloist', price: 1300
 * 
 * Construtura parte 2 - recursão e adicionando método no prototype 
 *
+* ps: todo tipo de dado no JS usa prototype para seus criar seus métodos
 *
 ******************************************************************/
 
