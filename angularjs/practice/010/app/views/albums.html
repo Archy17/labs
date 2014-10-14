@@ -1,0 +1,12 @@
+<h2>{{ band.name }}'s Albums</h2>
+
+<table>
+  <thead>
+    <th>Album</th>
+    <th>Year</th>
+  </thead>
+  <tr ng-repeat="album in band.stdio">
+    <td>{{ album.album }}</td>
+    <td>{{ album.year }}  </td>
+  </tr>
+</table>
