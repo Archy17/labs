@@ -6,10 +6,10 @@
     $scope.reverse = false;
 
     $scope.bands = [ 
-      {name: 'Dream Theater', origin: 1989, albums: 13, genre: 'Progressive Metal'},
-      {name: 'Symphony X', origin: 1992, albums: 7, genre: 'Progressive Metal'},
-      {name: 'Karmakanic', origin: 2006, albums: 4, genre: 'Progressive Fusion'},
-      {name: 'Circus Maximus', origin: 2004, albums: 5, genre: 'Progressive Metal'}
+      { name: 'Dream Theater', origin: 1989, albums: 13, genre: 'Progressive Metal' },
+      { name: 'Symphony X', origin: 1992, albums: 7, genre: 'Progressive Metal' },
+      { name: 'Karmakanic', origin: 2006, albums: 4, genre: 'Progressive Fusion' },
+      { name: 'Circus Maximus', origin: 2004, albums: 5, genre: 'Progressive Metal' }
     ];
 
     $scope.bandSort = function( param ) {
