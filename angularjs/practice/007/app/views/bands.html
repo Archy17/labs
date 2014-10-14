@@ -1,0 +1,23 @@
+<h1>Bands</h1>
+Filter: <input type="text" ng-model="bandFilter.name">
+<br><br>
+
+<table>
+  <thead>
+    <th ng-click="bandSort('name')">Name</th>
+    <th ng-click="bandSort('origin')">Origin</th>
+    <th ng-click="bandSort('albums')">Albums</th>
+    <th ng-click="bandSort('genre')">Genre</th>
+  </thead>
+  <tr ng-repeat="band in bands | filter: bandFilter | orderBy:searchBy:reverse">
+    <td>{{ band.name }}</td>
+    <td>{{ band.origin }}</td>
+    <td>{{ band.albums }}</td>
+    <td>{{ band.genre }}</td>
+  </tr>
+</table>
+
+<br>
+
+<h3>Total of Bands: {{ bands.length }}</h3>
+
