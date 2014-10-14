@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 002</title>
+</head>
+<body ng-app ng-init="price = '$3100'">
+  
+  <span ng-bind="guitar"></span><br>
+  Guitar Model: <input type="text" ng-model="guitar"><br>
+
+  Show Price: <input type="checkbox" ng-model="show"><br>
+  <div ng-show="show">
+    Price: {{ price }}<br>
+  </div>
+
+  <button ng-click="guitar = 'Music Man'; price = '$4300'">Music Man model</button><br>
+
+  <script src="angular.js"></script>
+</body>
+</html>
