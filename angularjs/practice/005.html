@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 005</title>
+</head>
+<body ng-init="bands = [ {name: 'Dream Theater', origin: 1989, albums: 13, genre: 'Progressive Metal'},
+  {name: 'Symphony X', origin: 1992, albums: 7, genre: 'Progressive Metal'},
+  {name: 'Karmakanic', origin: 2006, albums: 4, genre: 'Progressive Fusion'},
+  {name: 'Circus Maximus', origin: 2004, albums: 5, genre: 'Progressive Metal'} ]">
+  
+  <h1>Bands</h1>
+
+  Search: <input type="text" ng-model="search"><br> 
+  Number of Results: <input type="number" ng-model="numLimit" placeholder="total: {{ bands.length }}">
+
+  <br><br>
+
+  <table>
+    <thead>
+      <th ng-click="sortBy = 'name'; reverse = !reverse">Name</th>
+      <th ng-click = "sortBy = 'origin'; reverse = !reverse">Origin</th>
+      <th ng-click= "sortBy = 'albums'; reverse = !reverse">Albums</th>
+      <th ng-click= "sortBy = 'genre'; reverse = !reverse">Genre</th>
+    </thead>
+    <tr ng-repeat="band in bands | filter: search | limitTo: numLimit | orderBy: sortBy: reverse">
+      <td>{{band.name}}</td>
+      <td>{{band.origin}}</td>
+      <td>{{band.albums}}</td>
+      <td>{{band.genre}}</td>
+    </tr>
+  </table>
+
+  <script src="angular.js"></script>
+</body>
+</html>
