@@ -16,7 +16,7 @@
       <th ng-click="bandSort('albums')">Albums</th>
       <th ng-click="bandSort('genre')">Genre</th>
     </thead>
-    <tr ng-repeat="band in bands | filter: bandFilter | orderBy:searchBy">
+    <tr ng-repeat="band in bands | filter: bandFilter | orderBy:searchBy:reverse">
       <td>{{ band.name }}</td>
       <td>{{ band.origin }}</td>
       <td>{{ band.albums }}</td>
