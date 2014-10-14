@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 003</title>
+  <style>
+    .logged-in {
+      color: green;
+      font-size: 31px;;
+    }
+
+    .logged-out {
+      color: blue;
+      font-size: 31px;
+    }
+
+   [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+     display: none !important;
+   }
+  </style>
+</head>
+<body ng-init="data = {user: 'Eric', show:true, loggedIn:true, status:'logged-in'}">
+  
+  <div ng-cloak>
+    <div ng-switch on="data.loggedIn">
+      <div ng-switch-when="true" ng-class="data.status">
+        Hi {{ data.user }} !
+      </div>
+      <div ng-switch-default ng-class="data.status">
+        Login
+      </div>
+    </div><br>
+    <div ng-show="data.show">
+      Name: <input type="text" ng-model="data.user">
+      {{ data.user }}
+    </div>
+  </div>
+
+  <script src="angular.js"></script>
+</body>
+</html>
