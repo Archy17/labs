@@ -1,0 +1,18 @@
+{
+  "Bands" : [
+    {
+      "name" : "Dream Theater",
+      "start" : "1985",
+      "end" : "-",
+      "albums" : "13",
+      "genre" : "Progressive Metal"
+    },
+    {
+      "name" : "Karmakanic",
+      "start" : "1999",
+      "end" : "-",
+      "albums" : "4",
+      "genre" : "Progressive Fusion"
+    }
+  ]
+}
