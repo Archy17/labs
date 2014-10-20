@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 17</title>
+  <link rel="stylesheet" href="../bootstrap.css">
+  <style>
+    .ng {
+      color: #F22B16;
+    }
+
+    .node {
+      color: #8BC70C;
+    }
+
+    .s2 {
+      color: #CFBD0D;
+      font-size: 2em;
+    }
+  </style>
+</head>
+<body ng-controller="ClassController">
+
+  <div>
+    <h1>
+      <span ng-class="{ng : check}">AngularJS</span> + <span ng-class="{{node}}">NodeJS</span> = <span ng-class="'s2'">❤</span>
+    </h1>
+
+    <button class="btn btn-primary" ng-click="change()">Change!</button>
+  </div>
+
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
