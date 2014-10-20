@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="GuitarApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 16</title>
+  <link rel="stylesheet" href="../bootstrap.css">
+</head>
+<body ng-controller="RepeatController">
+
+  <div ng-repeat="guitar in guitars">
+    Model: {{ guitar.model }} - Price: {{ guitar.price }}
+  </div>
+
+  <br><br>
+  
+  <div class="panel panel-default">
+    <table class="table">
+      <thead>
+        <th>Index</th>
+        <th>Model</th>
+        <th>Price</th>
+        <th></th>
+      </thead>
+      <tr ng-repeat="guitar in guitars">
+        <td>{{ $index }}</td>
+        <td>{{ guitar.model }}</td>
+        <td>{{ guitar.price }}</td>
+        <td>
+          <span ng-show="$first">Primeiro Elemento</span>
+          <span ng-show="$middle">Elemento Intermediário</span>
+          <span ng-show="$last">Último Elemento</span>
+          <span ng-show="$even">Elemento Ímpar</span>
+          <span ng-show="$odd">Elemento Par</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+  <br><br>
+
+  <div ng-repeat=""></div>
+
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
