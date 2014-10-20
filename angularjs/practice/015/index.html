@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 15</title>
+</head>
+<body ng-controller="EvenController">
+
+  <h1>{{ count }}</h1>
+  <h2 ng-show="even">É par</h2>
+  <h2 ng-hide="even">É ímpar</h2>
+  <button ng-click="oddEven()">Add +1</button>
+
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
