@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 19</title>
+  <link rel="stylesheet" href="../bootstrap.css">
+</head>
+<body ng-controller="ModelController">
+
+  <div class="jumbotron">
+    <input type="text" ng-model="data.name">
+    <h1>{{ data.name }}</h1>
+    
+    <!-- Desta forma os elementos ficam ligados. Sem o ".dot" a herança é
+    quebrada quando o "sub-model" é alterado -->
+    <div ng-controller="SubModelController">
+      <input type="text" ng-model="data.name">
+      <h3>{{ data.name }}</h3>
+    </div>
+  </div>
+
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
