@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 20</title>
+  <link rel="stylesheet" href="../bootstrap.css">
+</head>
+<body ng-controller="WatchController">
+
+  <div class="jumbotron">
+    <h1>Type your name below</h1>
+  </div>
+
+  <input type="text" ng-model="user.name" placeholder="{{user.name}}">
+  {{ user.name }}
+
+  <div ng-show="user.maxSize" class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert">
+    <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <strong>Warning!</strong> Too long name!
+  </div>
+
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
