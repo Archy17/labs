@@ -3,6 +3,9 @@ var app = angular.module( 'app', [] );
 /* DIRECTIVES */
 app.directive( 'hello', function() {
   return {
+    scope : {
+      color : '@' // or '@nameProperty' - in html name-property
+    },
     restrict : 'A',
     replace : 'true',
     template : '<p style="background-color:{{color}}">AngularJS Directives!</p>',
