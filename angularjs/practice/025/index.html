@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="PassApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 25</title>
+  <link rel="stylesheet" href="../bootstrap.css">
+  <style>
+    * {
+      margin:0;
+      padding:0;
+    }
+    body {
+      padding:10px;
+    }
+    label {
+      display:block;
+      font-size:14px;
+      margin:10px 0 2px;
+    }
+    input {
+      padding:1px 3px;
+    }
+    .msg-block {
+      margin-top:5px;
+    }
+    .msg-error {
+      color:#F30;
+      font-size:18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body ng-controller="passController">
+
+  <form novalidate name="checkForm">
+    <label for="passOne">Password:</label>
+    <input type="password" id="passOne" name="p1" ng-model="pass1" required>
+
+    <label for="passTwo">Confirm Password:</label>
+    <input type="password" id="passTwo" name="p2" ng-model="pass2" required checkPass="pass1">
+
+    <div class="msg-block" ng-show="checkForm.$error">
+      <span class="msg-error">
+        Password don't match!
+      </span>
+    </div>
+  </form>
+
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

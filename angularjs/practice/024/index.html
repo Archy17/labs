@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="FilterApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 24</title>
+  <link rel="stylesheet" href="../bootstrap.css">
+</head>
+<body ng-controller="FilterController">
+
+  <div class="jumbotron">
+    <h1>{{ testFilter | limitChar:3 }}</h1>
+  </div>
+
+  <input type="text" ng-model="testFilter">
+
+  <br>
+  <hr>
+  <br>
+
+  <div class="well">
+    <ul ng-repeat="user in users | limitScore">
+      <li>{{user}}</li>
+    </ul>
+  </div>
+
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+  <script src="controllers/FilterController.js"></script>
+  <script src="filters/filters.js"></script>
+</body>
+</html>
