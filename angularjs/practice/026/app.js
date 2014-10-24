@@ -24,4 +24,7 @@ app.directive( 'hello', function() {
 });
 
 /* CONTROLLERS */
-app.controller( 'DirController', function( $scope ) {} );
+app.controller( 'DirController', function( $scope ) {
+  $scope.colors = [ 'red', 'orange', 'green' ];
+  $scope.change = function() {};
+});

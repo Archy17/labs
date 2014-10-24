@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ownFilter">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 027</title>
+  <link rel="stylesheet" href="../bootstrap.css">
+</head>
+<body ng-controller="FilterController as fc">
+  
+  <div class="jumbotron">
+    <h1>{{ fc.title | trimSpace }}</h1>
+  </div>
+
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+  <script src="trimSpace.js"></script>
+</body>
+</html>
