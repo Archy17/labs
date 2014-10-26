@@ -1,4 +1,5 @@
 (function() {
+  'use strict';
 
   function FilterController( $scope ) {
 
@@ -40,7 +41,7 @@
 
   }
 
-angular.module( 'FilterApp', [] )
+angular.module( 'FilterApp' )
   .controller( 'FilterController', FilterController );
   
 })();

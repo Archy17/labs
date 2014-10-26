@@ -20,15 +20,6 @@
 
   function limitScore() {
 
-    function checkScore( obj, limit ) {
-      if ( obj.score < limit ) {
-        return false;
-      } else {
-        result.push( obj );
-        return true;
-      }
-    }
-
     return function( data, limit ) {
       limit = limit ? limit : 2000;
       var result = [];
@@ -39,9 +30,18 @@
 
     };
 
+    function checkScore( obj, limit ) {
+      if ( obj.score < limit ) {
+        return false;
+      } else {
+        result.push( obj );
+        return true;
+      }
+    }
+
   }
 
-  angular.module( 'FilterApp', [] )
+  angular.module( 'FilterApp' )
     .filter( 'limitChar', limitChar )
     .filter( 'limitScore', limitScore );
 })();
