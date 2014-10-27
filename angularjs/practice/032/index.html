@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 032</title>
+  <link rel="stylesheet" href="../bootstrap.css">
+  <style>
+    .td-even {
+      background-color: #063940;
+    }
+    .td-odd {
+      background-color: #14B7CC;
+    }
+  </style>
+</head>
+<body ng-controller="ListController as lc">
+
+  <table class="table">
+    <tr ng-repeat-start="(key, value) in lc.guitars"
+      ng-class="{ 'td-even' : $even, 'td-odd' : $odd }">
+      <td>
+        {{ key }}
+      </td>
+    </tr>
+    <tr ng-repeat-end ng-class="{ 'td-even' : $even, 'td-odd' : $odd }">
+      <td>
+        {{ value.price | currency }}
+      </td>
+    </tr>
+  </table>
+
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
