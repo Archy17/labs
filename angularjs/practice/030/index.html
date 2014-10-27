@@ -12,7 +12,14 @@
     <!-- ng-bind is equal to {{}} -->
     <label ng-bind="data.label"></label>
     <span>{{ data.assignee }}</span>
-    
+  </div>
+
+  <div class="jumbotron">
+
+    <div ng-repeat="(key, value) in lc.guitars">
+      <span ng-bind="key">{{ key }}</span>
+      <span>{{ value.price }}</span>
+    </div>
   </div>
 
   <script src="../angular.js"></script>
