@@ -18,7 +18,10 @@
         // capitalized names appear first
         Ibanez   : { price : 1300 },
         musicman : { price : 3100 },
-        Mayones  : { price : 3370 }
+        Mayones  : { price : 3370 },
+        Gibson   : { price : 2300 },
+        Fender : { price : 1700 },
+        Caparison  : { price : 4370 }
       };
 
       function getClass( status ) {
