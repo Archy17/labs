@@ -1,0 +1,22 @@
+.bin {
+  width: 310px;
+  height: 310px;
+  border: 2px solid black;
+  background-color: #311331;
+}
+
+.item {
+  width: 130px;
+  height: 130px;
+  border: 1px solid blue;
+  background-color: blue;
+  margin: auto;
+}
+
+.drag {
+  background-color: black;
+}
+
+.over {
+  background-color: yellow;
+}

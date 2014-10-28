@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 34</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body ng-app=dragDrop ng-controller="DragDropController as dnd">
+  
+  <div class="bin" droppable drop="dnd.handleDrop()"></div>
+  <div class="item" id="item1" draggable></div>
+
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+  <script src="draggableDirective.js"></script>
+  <script src="droppableDirective.js"></script>
+  <script src="dragDropController.js"></script>
+</body>
+</html>
