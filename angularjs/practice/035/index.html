@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 34</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body ng-app=dragDrop ng-controller="DragDropController as dnd">
+  
+  <div class="bin"
+    droppable
+    drop="dnd.handleDrop"
+    ng-repeat="bin in [ 1, 2, 3 ]"
+    bin="bin" id="bin{{ bin }}">
+    {{ bin }}
+  </div>
+
+  <div class="item"
+    id="item{{ item }}"
+    ng-repeat="item in [ 1, 2, 3 ]"
+    draggable
+    item="item">
+    {{ item }}
+  </div>
+
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+  <script src="draggableDirective.js"></script>
+  <script src="droppableDirective.js"></script>
+  <script src="dragDropController.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+.bin {
+  width: 50px;
+  height: 50px;
+  border: 2px solid black;
+  background-color: #ccc;
+  padding: 1%;
+}
+
+.item {
+  width: 25px;
+  height: 25px;
+  border: 1px solid blue;
+  background-color: blue;
+  padding: 1%;
+}
+
+.drag {
+  background-color: #555;
+}
+
+.over {
+  background-color: yellow;
+}
