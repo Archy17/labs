@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 38</title>
+  <link rel="stylesheet" href="../bootstrap.css">
+</head>
+<body ng-controller="ComboController as cc">
+  
+  <div class="jumbotron">
+    <h2>Marvel's Hero</h2>
+  </div>
+
+  <div class="container">
+    <select ng-model="cc.selectedHeroId"
+      ng-options="p.id as p.hero for p in cc.marvel">
+    </select>
+    Selected Hero ID: {{ cc.selectedHeroId }}
+  </div>
+
+  <div class="container">
+    <select ng-model="cc.selectedHero"
+      ng-options="p.hero for p in cc.marvel">
+    </select>
+    Selected Hero: {{ cc.selectedHero }}
+  </div>
+
+
+
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
