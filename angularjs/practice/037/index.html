@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 36</title>
+  <link rel="stylesheet" href="../bootstrap.css">
+</head>
+<body ng-controller="CheckController as cc">
+  
+  <div class="jumbotron">
+    <h2>Type your favorite guitars</h2>
+  </div>
+
+  <div ng-repeat="guitar in cc.data">
+    <label ng-bind="guitar.brand"></label>
+    <p>
+      With binding:
+      <input type="checkbox"
+             ng-model="guitar.selected"
+             ng-true-value="'yes'"
+             ng-false-value="'no'">
+    </p>
+    <p>
+      Using ng-checked:
+      <input type="checkbox"
+             ng-checked="guitar.selected === 'yes'">
+    </p>
+    <p>
+      Current state: {{ guitar.selected }}
+    </p>
+  </div>
+
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
