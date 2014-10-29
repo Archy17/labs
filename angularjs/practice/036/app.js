@@ -8,6 +8,8 @@ myapp.controller('sortableController', function ($scope) {
   for (var i = 1; i <= 6; i++){
     tmpList.push({
       text: 'Item ' + i,
+      text2: 'Item2 ' + i,
+      text3: 'Item3 ' + i,
       value: i
     });
   }

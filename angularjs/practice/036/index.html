@@ -55,7 +55,9 @@
     <div class="row">
       <div class="col-md-6">
         <ul ui-sortable="sortableOptions" ng-model="list" class="list">
-          <li ng-repeat="item in list" class="item">{{item.text}}</li>
+          <li ng-repeat="item in list" class="item">
+            <span ng-include="'partial.html'"></span>
+          </li>
         </ul>
       </div>
       <div class="col-md-6">
