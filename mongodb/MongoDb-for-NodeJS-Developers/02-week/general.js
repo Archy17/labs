@@ -42,3 +42,18 @@ db.scores.find({ $or: [{ score: { $lt : 50 }}, { score: { $gt : 90 }}]});
 // Using $and
 db.scores.find({ $and: [{ score: { $lt : 50 }}, { score: { $gt : 90 }}]});
 // ps: $and is equal to normal operation db.scores.find({ score: { $lt:50, $gt:90 } })
+
+// Queries with dot notation
+db.catalog.find({ price : { $gt:10000 }, 'reviews.rating' : { $gte:5 } })
+
+// Querying cursors
+db.scores.find({type:'exam'}).sort({score:-1}).skip(50).limit(20)
+
+// Couting Results
+db.scores.count({type:'essay', score:{$gt:90}})
+
+// WHOLESALE UPDATING OF A DOCUMENT
+{ "_id" : "Texas", "population" : 2500000, "land_locked" : 1 }
+db.foo.update({_id:"Texas"},{population:30000000})
+// result -> { "_id" : "Texas", "population" : 30000000 }
+
