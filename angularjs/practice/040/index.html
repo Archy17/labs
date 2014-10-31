@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 40</title>
+  <link rel="stylesheet" href="../bootstrap.css">
+</head>
+<body ng-controller="MainController as mc">
+  
+  <div class="jumbotron">
+    <h1>AngularJS Services</h1>
+    <button class="btn btn-primary btn-sm" ng-click="mc.open('first')">Open First</button>
+    <button class="btn btn-primary btn-sm" ng-click="mc.open('second')">Open Second</button>
+  </div>
+  <div ng-switch on="mc.tab">
+    <div ng-switch-when="first">
+      <div ng-controller="SubController as sc">
+        <h2>First Tab</h2>
+        <ul>
+          <li ng-repeat="item in sc.list()">
+            <span ng-bind="item.label"></span>
+          </li>
+        </ul>
+        <button class="btn btn-primary" ng-click="sc.add()">Add Item</button>
+      </div>
+    </div>
+    <div ng-switch-when="second">
+      <div ng-controller="SubController as sc">
+        <h2>Second Tab</h2>
+        <ul>
+          <li ng-repeat="item in sc.list()">
+            <span ng-bind="item.label"></span>
+          </li>
+        </ul>
+        <button class="btn btn-primary" ng-click="sc.add()">Add Item</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+  <script src="ItemService.js"></script>
+</body>
+</html>
