@@ -72,3 +72,48 @@ db.users.update({ '_id' : 'myrnarackham' }, { $set : { 'country' : 'RU' } })
 }
 
 db.users.update({ 'name' : 'John' }, { $inc : { 'age' : 13 } })
+
+// Using the $unset command
+{ 
+    "_id" : "jimmy" , 
+    "favorite_color" : "blue" , 
+    "interests" : [ "debating" , "politics" ] 
+}
+
+db.users.update({ '_id' : 'jimmy' }, { $unset : { 'interests' : 1 } })
+
+// Using $push, $pop, $pull, $pushAll, $pullAll, $addToSet
+{ _id : "Mike", interests : [ "chess", "botany" ] }
+
+> db.friends.update( { _id : "Mike" }, { $push : { interests : "skydiving" } } );
+> db.friends.update( { _id : "Mike" }, { $pop : { interests : -1 } } );
+> db.friends.update( { _id : "Mike" }, { $addToSet : { interests : "skydiving" } } );
+> db.friends.update( { _id : "Mike" }, { $pushAll: { interests : [ "skydiving" , "skiing" ] } } );
+
+/* result */ { _id : "Mike", interests : [ "botany", "skydiving", "skydiving", "skiing" ] }
+
+// Upserts
+db.foo.update( { username : 'bar' }, { '$set' : { 'interests': [ 'cat' , 'dog' ] } } , { upsert : true } );
+/* results */ { "_id" : ObjectId("507b78232e8dfde94c149949"), "interests" : [ "cat", "dog" ], "username" : "bar" }
+
+// Multi-update
+{
+  "_id" : ObjectId("50844162cb4cf4564b4694f8"),
+  "student" : 0,
+  "type" : "exam",
+  "score" : 75
+}
+/* Give every document with a score less than 70 an extra 20 points. */
+db.scores.update({ 'score' : { $lt : 70 } }, { $inc : { 'score':20 } }, { multi: true })
+
+// Removing data
+{
+  "_id" : ObjectId("50844162cb4cf4564b4694f8"),
+  "student" : 0,
+  "type" : "exam",
+  "score" : 75
+}
+/* Delete every document with a score of less than 60. */
+db.scores.remove({ 'score' : { $lt : 60 } }, { multi : true })
+
+
