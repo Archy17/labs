@@ -1,8 +1,8 @@
-// 05. Introduction to findOne
+// Introduction to findOne
 
 db.people.findOne({ "name" : "Jones", { "name" : "true", "_id" : false } })
 
-// 06. Querying using field selection
+// Querying using field selection
 db.people.find({ "name" : "some", "other" : "bla" });
 db.people.find({ "name" : "some", "other" : "bla" }, { "score" : true, "_id" : false });
 // -> { score : 88 }
@@ -57,3 +57,18 @@ db.scores.count({type:'essay', score:{$gt:90}})
 db.foo.update({_id:"Texas"},{population:30000000})
 // result -> { "_id" : "Texas", "population" : 30000000 }
 
+// Using the $set and $inc command
+{
+  "_id" : "myrnarackham",
+  "phone" : "301-512-7434",
+  "country" : "US"
+}
+db.users.update({ '_id' : 'myrnarackham' }, { $set : { 'country' : 'RU' } })
+
+// $inc example
+{
+  'name' : 'John',
+  'age' : 31
+}
+
+db.users.update({ 'name' : 'John' }, { $inc : { 'age' : 13 } })
