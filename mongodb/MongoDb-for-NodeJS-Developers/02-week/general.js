@@ -159,3 +159,40 @@ MongoClient.connect('mongodb://localhost:27017/course', function(err, db) {
 
 /* answer */ var query = { 'grade' : { $lt : 80, $gt : 69 } };
 
+// NODE.JS DRIVER: USING DOT NOTATION
+Use dot notation to construct a query that selects for a document with a 'name' of 'Steve' in the 'students' array.
+
+{
+    'course' : 'M101JS',
+    'students' : [
+        {
+            'name' : 'Susan'
+        },
+        {
+            'name' : 'Steve'
+        }
+    ]
+}
+
+/* answer */ { "students.name" : "Steve" }
+
+// NODE.JS DRIVER: INSERTING, _ID
+var MongoClient = require('mongodb').MongoClient;
+
+MongoClient.connect('mongodb://localhost:27017/course', function(err, db) {
+    if(err) throw err;
+
+    var docs = [ { '_id' : 'George', 'age' : 6 },
+                 { '_id' : 'george', 'age' : 7 } ];
+
+    db.collection('students').insert(docs, function(err, inserted) {
+        if(err) throw err;
+
+        console.dir("Successfully inserted: " + JSON.stringify(inserted));
+
+        return db.close();
+    });
+});
+
+/* answer */ Both documents will be inserted successfully
+
