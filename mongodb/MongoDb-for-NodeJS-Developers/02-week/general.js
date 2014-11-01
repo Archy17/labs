@@ -116,4 +116,46 @@ db.scores.update({ 'score' : { $lt : 70 } }, { $inc : { 'score':20 } }, { multi:
 /* Delete every document with a score of less than 60. */
 db.scores.remove({ 'score' : { $lt : 60 } }, { multi : true })
 
+// NODE.JS DRIVER: FIND, FINDONE, AND CURSORS
+var MongoClient = require('mongodb').MongoClient;
+
+MongoClient.connect('mongodb://localhost:27017/course', function(err, db) 
+{
+     if(err) throw err;
+
+     var query = { 'grade' : 100};
+
+     function callback(err, doc) {
+          if(err) throw err;
+
+          console.dir(doc);
+
+          db.close();
+     } 
+     /* TODO */
+});
+
+/* answer */ db.collection( 'grades' ).findOne( query, callback );
+
+// NODE.JS DRIVER: USING FIELD PROJECTION
+// Which of the following queries will cause only the 'grade' field to be returned?
+db.collection('grades')find({}, {'grade':1, '_id':0}, callback);
+
+// NODE.JS DRIVER: USING $GT AND $LT
+var MongoClient = require('mongodb').MongoClient;
+MongoClient.connect('mongodb://localhost:27017/course', function(err, db) {
+    if(err) throw err;
+
+    /* TODO - Get all documents with a grade between 69 and 80 */
+
+    db.collection('grades').find(query).each(function(err, doc){
+        if(err) throw err;
+        if(doc == null) {
+            return db.close();
+        }
+        console.dir(doc);
+    });
+});
+
+/* answer */ var query = { 'grade' : { $lt : 80, $gt : 69 } };
 
