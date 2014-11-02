@@ -196,3 +196,8 @@ MongoClient.connect('mongodb://localhost:27017/course', function(err, db) {
 
 /* answer */ Both documents will be inserted successfully
 
+// NODE.JS DRIVER: UPSERTS
+db.collection('grades').save({'_id': 'email@example.com', 'name': 'Joe'}, callback);
+// Assuming the necessary variables are defined, what is the result of calling this function?
+/* answer */ Upsert to insert or replace the document
+
