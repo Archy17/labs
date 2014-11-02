@@ -201,3 +201,10 @@ db.collection('grades').save({'_id': 'email@example.com', 'name': 'Joe'}, callba
 // Assuming the necessary variables are defined, what is the result of calling this function?
 /* answer */ Upsert to insert or replace the document
 
+// NODE.JS DRIVER: FINDANDMODIFY
+db.collection('homeworks').findAndModify({}, [[ 'grade' , 1 ]], { '$set' : { 'dropped' : true } }, { 'new' : true }, callback);
+
+// NODE.JS DRIVER: REMOVE
+db.collection('foo').remove(callback);
+db.collection('foo').remove({ 'x' : { '$nin' : [] } }, callback);
+db.collection('foo').remove({}, callback);
