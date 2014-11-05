@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../bootstrap.css">
+  <link rel="stylesheet" href="angucomplete-alt.css">
+  <title>Practice 42</title>
+</head>
+<body ng-controller="AutoController as ac">
+
+  <div class="jumbotron" ng-show="ac.chosen">
+    <h1>Brand: {{ ac.chosen.originalObject.brand }}</h1>
+    <h2>Price: {{ ac.chosen.originalObject.price | currency }}</h2>
+  </div>
+  <angucomplete-alt id="ex1"
+              placeholder="Search guitars"
+              pause="100"
+              selected-object="ac.chosen"
+              local-data="ac.data"
+              search-fields="brand"
+              title-field="brand"
+              minlength="1"
+              match-class="highllight"
+              input-class="form-control form-control-small"/>
+
+  
+  <script src="../angular.js"></script>
+  <script src="angucomplete-alt.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
