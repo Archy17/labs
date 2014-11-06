@@ -5,6 +5,12 @@
   <link rel="stylesheet" href="../bootstrap.css">
   <link rel="stylesheet" href="angucomplete-alt.css">
   <title>Practice 42</title>
+  <style>
+    .angucomplete-dropdown {
+      overflow-y: auto;
+      max-height: 200px; // your preference
+    }
+  </style>
 </head>
 <body ng-controller="AutoController as ac">
 
@@ -12,7 +18,7 @@
     <h1>Brand: {{ ac.chosen.originalObject.brand }}</h1>
     <h2>Price: {{ ac.chosen.originalObject.price | currency }}</h2>
   </div>
-  <angucomplete-alt id="ex1"
+  <div angucomplete-alt id="ex1"
               placeholder="Search guitars"
               pause="100"
               selected-object="ac.chosen"
@@ -21,8 +27,8 @@
               title-field="brand"
               minlength="1"
               match-class="highllight"
-              input-class="form-control form-control-small"/>
-
+              input-class="form-control form-control-small">
+  </div>
   
   <script src="../angular.js"></script>
   <script src="angucomplete-alt.js"></script>
