@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 43</title>
+  <link rel="stylesheet" href="pikaday.css">
+</head>
+<body ng-controller="DateController as dc">
+
+  <input type="text" id="datepicker" ng-model="dc.date">
+
+  <h1 ng-bind="dc.date"></h1>
+  
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+  <script src="pikaday.js"></script>
+  <script>
+    var picker = new Pikaday({ field: document.getElementById('datepicker') });
+  </script>
+</body>
+</html>
