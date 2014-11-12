@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="app">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Aprenda AngularJS - Editor Inline</title>
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
+
+    <!-- Arquivo CSS principal -->
+    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="angucomplete-alt.css">
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <!-- Observe a Diretiva Controller -->
+  <body ng-controller="InlineEditorController as iec">
+
+    <!-- Quando este elemento é clicado, esconde o tooltip -->
+    <div id="main" ng-click="iec.hideTooltip()">
+
+      <!-- Este é o tooltip. Ele é mostrado somente quando a variável showtooltip for verdadeira -->
+      <div class="tooltip" ng-click="$event.stopPropagation()" ng-show="iec.showtooltip">
+
+        <!-- ng-model liga os conteúdos do campo de texto com o modelo "value". Qualquer mudança no campo de texto vai automaticamente atualizar o valor, e todas as outras ligações da página que dependam disto  -->
+        <select ng-options="d.data for d in iec.values" ng-model="iec.value"></select>
+
+      </div>
+
+      <!-- Chamando um método definido em InlineEditorController que alterna a variável showtooltip -->
+      <p ng-click="iec.toggleTooltip($event)">{{iec.value.data}}</p>
+
+      <div angucomplete-alt id="ex1"
+              placeholder="Search countries"
+              pause="100"
+              selected-object="iec.chose"
+              local-data="iec.values"
+              search-fields="data"
+              title-field="data"
+              minlength="1"
+              input-class="form-control form-control-small"
+              ng-model="iec.value">
+    </div>
+
+    </div>
+
+    <!-- Incluindo o AngularJS from Google's CDN -->
+    <script src="../angular.js"></script>
+    <script src="app.js"></script>
+    <script src="angucomplete-alt.js"></script>
+  </body>
+</html>
