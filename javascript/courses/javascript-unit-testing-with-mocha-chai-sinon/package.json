@@ -16,6 +16,7 @@
   "author": "Eric Douglas",
   "license": "ISC",
   "devDependencies": {
+    "chai": "^1.10.0",
     "mocha": "^2.0.1"
   },
   "dependencies": {

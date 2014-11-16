@@ -18,7 +18,7 @@ describe( 'hex2rgb', function() {
       assert.strictEqual( error, null );
       assert.deepEqual( result, [ 255, 255, 255 ] );
 
-      done()
+      done();
     });    
 
   });
