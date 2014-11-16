@@ -14,5 +14,10 @@
     "test"
   ],
   "author": "Eric Douglas",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.10.2",
+    "jade": "^1.7.0",
+    "mocha": "^2.0.1"
+  }
 }
