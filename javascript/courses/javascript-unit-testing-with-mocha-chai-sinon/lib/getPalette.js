@@ -1,11 +1,11 @@
-function getPalette() {
-  // return [ '#ccc', '#900455', '#0055ff' ];
-  return 'hello';
+function getData() {
+  return [ '#ccc', '#900455', '#0055ff' ];
 }
 
-module.exports = function() {
+module.exports = function( fetch ) {
 
-  var palette = getPalette();
+  var fetch = fetch || getData;
+  var palette = fetch();
 
   if ( !Array.isArray( palette )) {
     throw new Error( 'Palette is not an array' );
