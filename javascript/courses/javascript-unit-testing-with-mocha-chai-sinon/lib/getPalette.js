@@ -1,11 +1,12 @@
-function getData() {
-  return [ '#ccc', '#900455', '#0055ff' ];
+var fs = require( 'fs' );
+
+function getConfig() {
+  return JSON.parse( fs.readFileSync( process.cwd() + '/config.json').toString());
 }
 
-module.exports = function( fetch ) {
+module.exports = function() {
 
-  var fetch = fetch || getData;
-  var palette = fetch();
+  var palette = getConfig().palette;
 
   if ( !Array.isArray( palette )) {
     throw new Error( 'Palette is not an array' );
