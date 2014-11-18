@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 45</title>
+</head>
+<body ng-controller="AppController as appCtrl">
+
+  <div>
+    <h3>Conditional Elements in HTML</h3>
+
+    <button ng-click="appCtrl.currentTab = 'tab1'">
+      Tab 1
+    </button>
+    <button ng-click="appCtrl.currentTab = 'tab2'">
+      Tab 1
+    </button>
+    <button ng-click="appCtrl.currentTab = 'tab3'">
+      Tab 1
+    </button>
+    <button ng-click="appCtrl.currentTab = 'something'">
+      Tab 1
+    </button>
+
+    <div ng-switch="appCtrl.currentTab">
+      <div ng-switch-when="tab1">Tab 1 is selected!</div>
+      <div ng-switch-when="tab2">Tab 2 is selected!</div>
+      <div ng-switch-when="tab3">Tab 3 is selected!</div>
+      <div ng-switch-default>No know tab selected...</div>
+    </div>
+  </div>
+  
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
