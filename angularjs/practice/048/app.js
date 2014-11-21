@@ -1,0 +1,32 @@
+(function() {
+
+  'use strict';
+
+  angular
+    .module( 'StockMarketApp', [] )
+    .controller( 'MainController', MainController );
+
+  function MainController() {
+
+    var vm = this;
+
+    ///////////// Properties
+    vm.stocks = [
+      { name: 'First Stock', price: 100, previous: 220 },
+      { name: 'Second Stock', price: 140, previous: 120 },
+      { name: 'Third Stock', price: 110, previous: 110 },
+      { name: 'Fourth Stock', price: 400, previous: 420 }
+    ];
+
+    ///////////// Methods
+    vm.getChange = getChange;
+
+    /////////////
+    function getChange( stock ) {
+      return Math.ceil( 
+        (( stock.price - stock.previous ) / stock.previous ) * 100 );
+    }
+
+  }
+
+}());
