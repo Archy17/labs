@@ -19,9 +19,13 @@
     ];
 
     ///////////// Methods
-    
+    vm.getChange = getChange;
 
     /////////////
+    function getChange( stock ) {
+      return Math.ceil( 
+        (( stock.price - stock.previous ) / stock.previous ) * 100 );
+    }
 
   }
 
