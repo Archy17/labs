@@ -4,11 +4,11 @@
         ng-bind="stockData.name">    
   </span>
   Price:
-  <span class=""
+  <span class="stock-price"
         ng-bind="stockData.price | currency">
   </span>
   Percentage Change:
   <span class="stock-change"
-        ng-bind="getChange( stock ) + '%'">
+        ng-bind="getChange( stockData ) + '%'">
   </span>
 </div>
