@@ -1,5 +1,6 @@
 var hex2rgb = require( '../lib/hex2rgb' );
 var expect = require( 'chai' ).expect;
+var sinon = require( 'sinon' );
 
 describe( 'hex2rgb', function() {
 
