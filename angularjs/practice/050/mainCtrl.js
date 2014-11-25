@@ -20,8 +20,12 @@
     vm.onStockSelect = onStockSelect;
 
     /////////////
-    function onStockSelect() {
-      console.log( 'Selected price: ', price, ' - Name: ', name );
+    function onStockSelect( price, name, previous ) {
+      console.log( 
+        'Selected price: ', price, 
+        ' - Name: ', name, 
+        'Previous price: ', previous
+      );
     }
 
   }

@@ -2,7 +2,7 @@
 <html lang="en" ng-app="StockMarketApp">
 <head>
   <meta charset="UTF-8">
-  <title>Practice 49</title>
+  <title>Practice 50</title>
 </head>
 <body ng-controller="MainController as mainCtrl">
 
@@ -12,7 +12,7 @@
       <div stock-widget
            stock-data="s"
            stock-title="Stock {{ $index }}. {{ s.name }}"
-           when-select="mainCtrl.onStockSelect( stockPrice, stockName )">
+           when-select="mainCtrl.onStockSelect( stockPrice, stockName, stockPrevious )">
       </div>
     </div>
   </div>
