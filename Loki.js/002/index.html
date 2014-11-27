@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lokiApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Loki.js 01</title>
+</head>
+<body ng-controller="DataController as dataCtrl">
+  <button ng-click="dataCtrl.storeData()">Store data!</button>
+  <button ng-click="dataCtrl.showData()">Show Data!</button>
+
+  <div>
+    <pre>
+      {{ dataCtrl.viewData | json }}
+    </pre>
+  </div>
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/lokijs/src/lokijs.js"></script>
+  <script src="app.js"></script>
+  <script src="dataController.js"></script>
+  <script src="data-input.js"></script>
+</body>
+</html>
