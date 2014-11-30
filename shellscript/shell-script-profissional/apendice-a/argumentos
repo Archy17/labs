@@ -1,0 +1,6 @@
+# argumentos - mostra o valor das variáveis especiais
+
+echo "O nome deste script é: $0"
+echo "Recebido $# argumentos: $*"
+echo "O primeiro argumento foi: $1"
+echo "O segundo argumento foi: $2"
