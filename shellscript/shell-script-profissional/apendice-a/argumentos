@@ -1,3 +1,4 @@
+#!bin/bash
 # argumentos - mostra o valor das variáveis especiais
 
 echo "O nome deste script é: $0"

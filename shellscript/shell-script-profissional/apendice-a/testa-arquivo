@@ -1,3 +1,4 @@
+#!/bin/bash
 # testa-arquivo
 #
 # script - recebe uma entrada do usuário e verifica se o arquivo existe
