@@ -1,0 +1,18 @@
+# testa-arquivo
+#
+# script - recebe uma entrada do usuário e verifica se o arquivo existe
+#   se existir, informa se é uma diretório ou arquivo
+#   se não exisitr, informa que não existe
+# autor: Eric Douglas
+
+echo "Digite um arquivo a ser encontrado:"
+read INPUT
+
+# verifica se FILE é um arquivo
+test -f $INPUT && echo "O arquivo $FILE existe!!!"
+
+# verifica se FILE é um diretório
+test -d $INPUT && echo "O diretório $FILE existe!!!"
+
+# imprimi caso não exista
+test -f $INPUT -o -d $INPUT || echo "A entrada $INPUT não foi encontrada!"
