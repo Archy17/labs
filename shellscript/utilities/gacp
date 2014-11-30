@@ -1,0 +1,6 @@
+# gacp - alias para git add . && git commit -m 'mensagem' && git push
+# autor: Eric Douglas
+
+git add .
+git commit -m "$1"
+git push
