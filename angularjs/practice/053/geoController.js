@@ -23,7 +23,7 @@
     vm.lon2 = -123.1411007;
     vm.lon2Rad = toRadians( vm.lon2 );
 
-    vm.distance = 13;
+    vm.distance = calculateDistance( vm.lat1, vm.lon1, vm.lat2, vm.lon2 );
 
     ///////////// Methods
     vm.toRadians = toRadians;
@@ -34,8 +34,25 @@
       return value * ( Math.PI / 180 );
     }
 
-    function calculateDistance() {
-    
+    function calculateDistance( lat1, lon1, lat2, lon2 ) {
+      var distance;
+      var R = 6371; // km
+
+      var latitudeDistance = toRadians( lat2 - lat1 );
+      var longitudeDistance = toRadians( lon2 - lon1 );
+
+      var lat1Rad = toRadians( lat1 );
+      var lat2Rad = toRadians( lat2 );
+
+      var haversine = Math.sin( latitudeDistance / 2 ) * Math.sin( latitudeDistance / 2 ) +
+                      Math.cos( lat1Rad ) * Math.cos( lat2Rad ) +
+                      Math.sin( longitudeDistance / 2 ) * Math.sin( longitudeDistance );
+
+      var angularDistance = 2 * Math.atan2( Math.sqrt( haversine ), Math.sqrt( 1 - haversine ));
+
+      distance = R * angularDistance;
+
+      return distance;
     }
   }
 }());
