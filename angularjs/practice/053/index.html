@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="GeoApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 53</title>
+</head>
+<body ng-controller="GeoController as gc">
+  <h1>Distance Between Two Locals</h1>
+ 
+  <h3>Place 1</h3>
+  
+  <p>
+    Latitude: <input type="text" ng-model="gc.lat1"> ° (degrees) <br>
+    Longitude: <input type="text" ng-model="gc.lon1"> ° (degrees) <br>
+    Latitude (rad): <strong>{{ gc.lat1Rad }}</strong> | Longitude (rad): <strong>{{ gc.lon1Rad }}</strong>
+  </p>
+  
+  <h3>Place 2</h3>
+  <p>
+    Latitude: <input type="text" ng-model="gc.lat2"> ° (degrees) <br>
+    Longitude: <input type="text" ng-model="gc.lon2"> ° (degrees)
+    Latitude (rad): <strong>{{ gc.lat2Rad }}</strong> | Longitude (rad): <strong>{{ gc.lon2Rad }}</strong>
+  </p>
+
+  <h3>Distance: {{ gc.distance }} km.</h3>
+
+  <p>
+    OBS: Latitude: -90 ° (degrees) <-> 90 ° (degrees) | Longitude: -180 ° (degrees) <-> 180 ° (degrees)
+  </p>
+
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+  <script src="geoController.js"></script>
+</body>
+</html>
