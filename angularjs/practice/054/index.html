@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ModalApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 054</title>
+  <link rel="stylesheet" href="ngDialog.css">
+  <link rel="stylesheet" href="../bootstrap.css">
+</head>
+<body ng-controller="ModalController as modalCtrl">
+
+  <button class="btn btn-success" ng-click="modalCtrl.openModal1()">Open External File</button>
+  <button class="btn btn-primary" ng-click="modalCtrl.openModal2()">Open Internal File</button>
+  
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+  <script src="modalController.js"></script>
+  <script src="ngDialog.js"></script>
+
+  <script type="text/ng-template" id="internalTemplate">
+    <h1>Template heading</h1>
+    <p>Content goes here</p>
+  </script>
+</body>
+</html>

@@ -4,11 +4,11 @@
 
   angular
     .module( 'StockMarketApp' )
-    .directive( 'stockWidget', stockWidget );
+    .directive( 'simpleStockRepeat', simpleStockRepeat );
 
-  stockWidget.$inject = [];
+  simpleStockRepeat.$inject = [];
 
-  function stockWidget() {
+  function simpleStockRepeat() {
 
     return {
       restrict : 'A',
