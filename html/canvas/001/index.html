@@ -10,6 +10,8 @@
     <!-- Insert fallback content here -->
   </canvas>
 
+  <button id="erase">Erase!</button>
+
   <script>
   window.onload = function() {
 
@@ -22,14 +24,15 @@
     ctx.fillStyle = '#2ecc71';
     ctx.fillRect( 160, 50, 100, 320 );
 
-    ctx.strokeStyle = 'darkblue';
-    ctx.strokeRect( 50, 160, 100, 100 );
-
     ctx.fillStyle = '#16a085';
     ctx.fillRect( 50, 270, 100, 100 );
 
+    ctx.lineWidth = 31;
+    ctx.strokeStyle = 'darkblue';
+    ctx.strokeRect( 50, 160, 100, 100 );
+
     // paths
-    ctx.fillStyle = 'rgba(0,0,0,0.85)';
+    ctx.fillStyle = 'rgba( 0, 0, 0, 0.85 )';
     ctx.beginPath();
     ctx.moveTo( 270, 50 );
     ctx.lineTo( 270, 200 );
@@ -42,7 +45,17 @@
     ctx.lineTo( 270, 370 );
     ctx.fill();
 
+    var btnEraser = document.getElementById( 'erase' );
+    btnEraser.addEventListener( 'click', erase );
+
+    ///////////// Methods
+    function erase() {
+      ctx.clearRect( 0, 0, canvas.width, canvas.height );
+    }
+
   };
+
   </script>
+
 </body>
 </html>
