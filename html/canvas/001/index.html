@@ -16,14 +16,20 @@
     var canvas = document.getElementById( 'myCanvas' );
     var ctx = canvas.getContext( '2d' );
 
+    ctx.fillStyle = '#2980b9';
     ctx.fillRect( 50, 50, 100, 100 );
+
+    ctx.fillStyle = '#2ecc71';
     ctx.fillRect( 160, 50, 100, 320 );
 
+    ctx.strokeStyle = 'darkblue';
     ctx.strokeRect( 50, 160, 100, 100 );
 
+    ctx.fillStyle = '#16a085';
     ctx.fillRect( 50, 270, 100, 100 );
 
     // paths
+    ctx.fillStyle = 'rgba(0,0,0,0.85)';
     ctx.beginPath();
     ctx.moveTo( 270, 50 );
     ctx.lineTo( 270, 200 );
