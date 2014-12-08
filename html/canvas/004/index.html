@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas from Scratch: Pixel Manipulation</title>
+</head>
+<body>
+    <!-- https://code.tutsplus.com/tutorials/canvas-from-scratch-pixel-manipulation--net-20573 -->
+
+  <canvas id="myCanvas" width="800" height="800">
+    <!-- Insert fallback content here -->
+  </canvas>
+
+  <script>
+
+    var canvas = document.getElementById( 'myCanvas' );
+    var ctx = canvas.getContext( '2d' );
+
+    var image = new Image();
+    image.src = "city.jpg";
+
+    window.onload = function() {
+
+      ctx.drawImage( image, 0, 0 );
+
+    };
+
+  </script>
+</body>
+</html>

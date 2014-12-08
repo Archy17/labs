@@ -65,7 +65,20 @@
     // ctx.fillRect( 0, 0, canvas.width, canvas.height );
 
     // Radial Gradients
-    var gradient = ctx.createRadialGradient( 350, 350, 0, 50, 50, 100 );
+    // var gradient = ctx.createRadialGradient( 350, 350, 0, 50, 50, 100 );
+    // gradient.addColorStop( 0, "black" );
+    // gradient.addColorStop( 1, "rgb( 125, 125, 125 )" );
+
+    // ctx.save();
+    // ctx.fillStyle = gradient;
+    // ctx.fillRect( 0, 0, canvas.width, canvas.height );
+    // ctx.restore();
+
+    // Radial Gradients - done properly!
+    var canvasCentreX = canvas.width / 2;
+    var canvasCentreY = canvas.height / 2;
+
+    var gradient = ctx.createRadialGradient( canvasCentreX, canvasCentreY, 400, canvasCentreX, canvasCentreY, 0 );
     gradient.addColorStop( 0, "black" );
     gradient.addColorStop( 1, "rgb( 125, 125, 125 )" );
 
