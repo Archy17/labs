@@ -27,9 +27,16 @@
     // // ctx.fillRect( 200, 200, 100, 100 );
 
     ctx.save();
-    ctx.scale( 2, 2 );
+    ctx.scale( 2, 2 ); // doble all values, inclusive coordinates
     ctx.fillRect( 50, 50, 100, 100 );
     ctx.restore();
+
+    ctx.translate( 300, 300 );
+    ctx.scale( 2, 2 );
+    ctx.fillRect( 0, 0, 100, 100 );
+    ctx.restore();
+
+
 
   </script>
 </body>
