@@ -16,17 +16,56 @@
     var canvas = document.getElementById( 'myCanvas' );
     var ctx = canvas.getContext( '2d' );
 
+    // var image = new Image();
+    // image.src = "city.jpg";
+
+    // window.onload = function() {
+
+    //   // In pseudo-code, the full nine drawImage arguments can 
+    //   // be described like so (s meaning source, and d meaning destination):
+    //   // ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh);
+    //   ctx.drawImage( image, 0, 0, 500, 500, 0, 0, 400, 400 );
+
+    //   // Accessing Pixel Values
+    //   // Security Issues: you only can access data from your domain
+
+    // };
+
     var image = new Image();
-    image.src = "city.jpg";
-
-    window.onload = function() {
-
-      // In pseudo-code, the full nine drawImage arguments can 
-      // be described like so (s meaning source, and d meaning destination):
-      // ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh);
-      ctx.drawImage( image, 0, 0, 500, 500, 0, 0, 400, 400 );      
-
+    image.src = 'city.jpg';
+    image.onload = function() {
+      ctx.drawImage( image, 0, 0 );
     };
+
+    canvas.addEventListener( 'click', manipulatePixel );
+
+    function manipulatePixel( e ) {
+      var canvasOffset = {
+        left : e.offsetX,
+        top : e.offsetY
+      };
+      var canvasX = Math.floor( e.pageX - canvasOffset.left );
+      var canvasY = Math.floor( e.pageY - canvasOffset.top );
+
+      var imageData = ctx.getImageData( 0, 0, canvas.width, canvas.height );
+      var pixels = imageData.data;
+      var pixelRedIndex = (( canvasY - 1 ) * ( imageData.width * 4 )) + (( canvasX - 1 ) * 4 );
+      var pixelColor = [
+        "rgba(",
+        pixels[ pixelRedIndex ],
+        ", ",
+        pixels[ pixelRedIndex + 1 ],
+        ", ",
+        pixels[ pixelRedIndex + 2 ],
+        ", ",
+        pixels[ pixelRedIndex + 3 ],
+        ")"
+      ].join( '' );
+
+      var body = document.getElementsByTagName( 'body' )[ 0 ];
+      console.log(pixelColor);
+      body.style.backgroundColor = pixelColor;
+    }
 
   </script>
 </body>
