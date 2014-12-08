@@ -36,7 +36,11 @@
     ctx.fillRect( 0, 0, 100, 100 );
     ctx.restore();
 
-
+    // IMPORTANT!
+    // rotate and all transformations also change the coordinates!!!
+    ctx.rotate( Math.PI / 4 ); // Rotate 45 degrees (in radians)
+    ctx.fillRect( 100, 100, 100, 100 );
+    ctx.restore();
 
   </script>
 </body>
