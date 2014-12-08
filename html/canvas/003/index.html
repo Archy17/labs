@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas from Scratch: Transformations and Gradients</title>
+</head>
+<body>
+    <!-- https://code.tutsplus.com/tutorials/canvas-from-scratch-transformations-and-gradients--net-19637 -->
+
+  <canvas id="myCanvas" width="800" height="800">
+    <!-- Insert fallback content here -->
+  </canvas>
+
+  <script>
+
+    var canvas = document.getElementById( 'myCanvas' );
+    var ctx = canvas.getContext( '2d' );
+
+    ctx.fillRect( 0, 0, 100, 100 );
+
+    ctx.save();
+    ctx.translate( 100, 100 );
+    ctx.fillStyle = 'rgb( 0, 0, 255 )';
+    ctx.fillRect( 0, 0, 100, 100 );
+    ctx.restore();
+
+  </script>
+</body>
+</html>
