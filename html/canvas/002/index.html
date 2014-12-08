@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas from Scratch: Advanced Drawning</title>
+</head>
+<body>
+  <!-- https://code.tutsplus.com/tutorials/canvas-from-scratch-advanced-drawing--net-18850 -->
+
+  <canvas id="myCanvas" width="800" height="800">
+    <!-- Insert fallback content here -->
+  </canvas>
+
+  <script>
+
+    var canvas = document.getElementById( 'myCanvas' );
+    var ctx = canvas.getContext( '2d' );
+
+    ctx.beginPath();
+    ctx.arc( 100, 100, 50, 0, Math.PI * 2, false );
+    ctx.closePath();
+    ctx.fill();
+
+    // ctx.lineWidth = 8;
+    // ctx.beginPath();
+    // ctx.moveTo( 50, 150 );
+    // ctx.quadraticCurveTo( 250, 50, 450, 150 );
+    // ctx.stroke();
+
+    // Bézier Path
+    ctx.lineWidth = 8;
+    ctx.beginPath();
+    ctx.moveTo( 50, 150 );
+    ctx.bezierCurveTo( 150, 50, 350, 250, 450, 150 );
+    ctx.stroke();
+
+    // OBS: Y positive increase to down!
+
+    ctx.fillStyle = 'rgb( 0, 0, 255 )';
+    ctx.save();
+    ctx.fillRect( 50, 200, 100, 100 );
+
+    ctx.fillStyle = 'rgb( 255, 0, 0 )';
+    ctx.fillRect( 200, 200, 100, 100 );
+
+    ctx.restore();
+    ctx.fillRect( 350, 200 , 100, 100 );
+
+  </script>
+</body>
+</html>
