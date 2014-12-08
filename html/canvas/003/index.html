@@ -31,6 +31,7 @@
     ctx.fillRect( 50, 50, 100, 100 );
     ctx.restore();
 
+    ctx.save();
     ctx.translate( 300, 300 );
     ctx.scale( 2, 2 );
     ctx.fillRect( 0, 0, 100, 100 );
@@ -38,8 +39,15 @@
 
     // IMPORTANT!
     // rotate and all transformations also change the coordinates!!!
-    ctx.rotate( Math.PI / 4 ); // Rotate 45 degrees (in radians)
-    ctx.fillRect( 100, 100, 100, 100 );
+    // ctx.rotate( Math.PI / 4 ); // Rotate 45 degrees (in radians)
+    // ctx.fillRect( 100, 100, 100, 100 );
+    // ctx.restore();
+
+    ctx.save();
+    ctx.fillStyle = 'blue';
+    ctx.translate( 200, 300 ); // Translate to centre of square
+    ctx.rotate( Math.PI / 4 );
+    ctx.fillRect( 0, 0, 145, 145 ); // Centre at the rotation point
     ctx.restore();
 
   </script>
