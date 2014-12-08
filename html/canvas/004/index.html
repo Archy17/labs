@@ -31,41 +31,64 @@
 
     // };
 
+    // // Get pixel's values
+    // var image = new Image();
+    // image.src = 'city.jpg';
+    // image.onload = function() {
+    //   ctx.drawImage( image, 0, 0 );
+    // };
+
+    // canvas.addEventListener( 'click', manipulatePixel );
+
+    // function manipulatePixel( e ) {
+    //   var canvasOffset = {
+    //     left : e.offsetX,
+    //     top : e.offsetY
+    //   };
+    //   var canvasX = Math.floor( e.pageX - canvasOffset.left );
+    //   var canvasY = Math.floor( e.pageY - canvasOffset.top );
+
+    //   var imageData = ctx.getImageData( 0, 0, canvas.width, canvas.height );
+    //   var pixels = imageData.data;
+    //   var pixelRedIndex = (( canvasY - 1 ) * ( imageData.width * 4 )) + (( canvasX - 1 ) * 4 );
+    //   var pixelColor = [
+    //     "rgba(",
+    //     pixels[ pixelRedIndex ],
+    //     ", ",
+    //     pixels[ pixelRedIndex + 1 ],
+    //     ", ",
+    //     pixels[ pixelRedIndex + 2 ],
+    //     ", ",
+    //     pixels[ pixelRedIndex + 3 ],
+    //     ")"
+    //   ].join( '' );
+
+    //   var body = document.getElementsByTagName( 'body' )[ 0 ];
+    //   console.log(pixelColor);
+    //   body.style.backgroundColor = pixelColor;
+    // }
+
+    // Set new pixel's values
     var image = new Image();
     image.src = 'city.jpg';
     image.onload = function() {
+
       ctx.drawImage( image, 0, 0 );
-    };
-
-    canvas.addEventListener( 'click', manipulatePixel );
-
-    function manipulatePixel( e ) {
-      var canvasOffset = {
-        left : e.offsetX,
-        top : e.offsetY
-      };
-      var canvasX = Math.floor( e.pageX - canvasOffset.left );
-      var canvasY = Math.floor( e.pageY - canvasOffset.top );
 
       var imageData = ctx.getImageData( 0, 0, canvas.width, canvas.height );
       var pixels = imageData.data;
-      var pixelRedIndex = (( canvasY - 1 ) * ( imageData.width * 4 )) + (( canvasX - 1 ) * 4 );
-      var pixelColor = [
-        "rgba(",
-        pixels[ pixelRedIndex ],
-        ", ",
-        pixels[ pixelRedIndex + 1 ],
-        ", ",
-        pixels[ pixelRedIndex + 2 ],
-        ", ",
-        pixels[ pixelRedIndex + 3 ],
-        ")"
-      ].join( '' );
+      var numPixels = imageData.width * imageData.height;
 
-      var body = document.getElementsByTagName( 'body' )[ 0 ];
-      console.log(pixelColor);
-      body.style.backgroundColor = pixelColor;
-    }
+      for ( var i = 0; i < numPixels; i += 1 ) {
+        pixels[ i * 4 ] = 255 - pixels[ i * 4 ]; // Red
+        pixels[ i * 4 + 1 ] = 255 - pixels[ i * 4 + 1 ]; // Green
+        pixels[ i * 4 + 2 ] = 255 - pixels[ i * 4 + 2 ]; // Blue
+      }
+
+      ctx.clearRect( 0, 0, canvas.width, canvas.height );
+      ctx.putImageData( imageData, 0, 0 );
+
+    };
 
   </script>
 </body>
