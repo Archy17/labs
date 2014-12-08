@@ -56,13 +56,23 @@
     // ctx.fillRect( 0, 0, 145, 145 ); // Centre at the rotation point
     // ctx.restore();
 
-    // Gradients
-    var gradient = ctx.createLinearGradient( 0, 0, 0, canvas.height );
-    gradient.addColorStop( 0, 'blue' );
-    gradient.addColorStop( 1, 'rgb( 0, 0, 0 )' );
+    // Linear Gradients
+    // var gradient = ctx.createLinearGradient( 0, 0, 0, canvas.height );
+    // gradient.addColorStop( 0, 'blue' );
+    // gradient.addColorStop( 1, 'rgb( 0, 0, 0 )' );
 
+    // ctx.fillStyle = gradient;
+    // ctx.fillRect( 0, 0, canvas.width, canvas.height );
+
+    // Radial Gradients
+    var gradient = ctx.createRadialGradient( 350, 350, 0, 50, 50, 100 );
+    gradient.addColorStop( 0, "black" );
+    gradient.addColorStop( 1, "rgb( 125, 125, 125 )" );
+
+    ctx.save();
     ctx.fillStyle = gradient;
     ctx.fillRect( 0, 0, canvas.width, canvas.height );
+    ctx.restore();
 
   </script>
 </body>
