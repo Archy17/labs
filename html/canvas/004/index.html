@@ -21,7 +21,10 @@
 
     window.onload = function() {
 
-      ctx.drawImage( image, 0, 0, 500, 500, 0, 0, 400, 400 );
+      // In pseudo-code, the full nine drawImage arguments can 
+      // be described like so (s meaning source, and d meaning destination):
+      // ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh);
+      ctx.drawImage( image, 0, 0, 500, 500, 0, 0, 400, 400 );      
 
     };
 
