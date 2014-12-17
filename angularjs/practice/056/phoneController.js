@@ -13,7 +13,7 @@
     var vm = this;
 
     ///////////// Properties
-    vm.phone = '';
+    // vm.phone = '';
 
     ///////////// Methods
 

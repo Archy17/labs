@@ -6,7 +6,7 @@
 </head>
 <body ng-controller="PhoneController as phoneCtrl">
   
-  <input type="tel" ng-model="phoneCtrl.phone" phone-validator>
+  <input type="tel" ng-model="phoneCtrl.phone" phone-validator maxlength="15">
 
   <h1>{{ phoneCtrl.phone }}</h1>
   

@@ -16,6 +16,8 @@
 
         modelCtrl.$parsers.push( function ( input ) {
 
+          console.log(input);
+
           var length = input.length;
           var maxSize = 14;
 
