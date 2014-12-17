@@ -17,7 +17,7 @@
         modelCtrl.$parsers.push( function ( input ) {
 
           var length = input.length;
-          var maxSize = 15;
+          var maxSize = 14;
 
           if ( length > maxSize ) {
             input = input.substring( length - maxSize, length );
