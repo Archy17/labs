@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 55</title>
+</head>
+<body ng-controller="PhoneController as phoneCtrl">
+  
+  <input type="tel" ng-model="phoneCtrl.phone">
+
+  <h1>{{ phoneCtrl.phone | phoneFilter }}</h1>
+  
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+  <script src="phoneController.js"></script>
+  <script src="phoneFilter.js"></script>
+
+</body>
+</html>
