@@ -2,18 +2,18 @@
 <html lang="en" ng-app="app">
 <head>
   <meta charset="UTF-8">
-  <title>Practice 55</title>
+  <title>Practice 56</title>
 </head>
 <body ng-controller="PhoneController as phoneCtrl">
   
-  <input type="tel" ng-model="phoneCtrl.phone">
+  <input type="tel" ng-model="phoneCtrl.phone" phone-validator>
 
   <h1>{{ phoneCtrl.phone }}</h1>
   
   <script src="../angular.js"></script>
   <script src="app.js"></script>
   <script src="phoneController.js"></script>
-  <script src="phoneFilter.js"></script>
+  <script src="phoneDirective.js"></script>
 
 </body>
 </html>
