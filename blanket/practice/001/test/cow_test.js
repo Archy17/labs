@@ -1,7 +1,7 @@
 var expect = chai.expect;
 
 describe( 'Cow', function() {
-  decribe( 'Constructor', function() {
+  describe( 'Constructor', function() {
     it( 'should have a default name', function() {
       var cow = new Cow();
       expect( cow.name ).to.equal( 'Anon Cow' );
@@ -13,7 +13,7 @@ describe( 'Cow', function() {
     });
   });
 
-  describe( '/#greets', function() {
+  describe( '#greets', function() {
     it( 'should greet passed target', function() {
       var greetings = ( new Cow( 'Kate' )).greets( 'Baby' );
       expect( greetings ).to.equal( 'Kate greets Baby' );
