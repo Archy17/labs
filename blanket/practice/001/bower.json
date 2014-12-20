@@ -1,0 +1,22 @@
+{
+  "name": "cow test coverage",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ericdouglas/labs",
+  "authors": [
+    "ericdouglas <eric.eoop@gmail.com>"
+  ],
+  "description": "test coverage with mocha chai sinon and blanket",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "blanket": "~1.1.5"
+  }
+}
