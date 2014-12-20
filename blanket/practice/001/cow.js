@@ -11,7 +11,7 @@
     greets : function( target ) {
       if ( !target )
         throw new Error( 'Missing target' );
-      return this.name + ' greets ' + target + '!';
+      return this.name + ' greets ' + target;
     }
   };
 
