@@ -3,7 +3,7 @@
   'use strict';
 
   function Cow( name ) {
-    this.name = name || 'Anon cow';
+    this.name = name || 'Anon Cow';
   }
   exports.Cow = Cow;
 
