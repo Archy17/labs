@@ -18,5 +18,11 @@ describe( 'Cow', function() {
       var greetings = ( new Cow( 'Kate' )).greets( 'Baby' );
       expect( greetings ).to.equal( 'Kate greets Baby' );
     });
+
+    it( 'should pass an error if no target is passed', function() {
+      expect( function() {
+        ( new Cow()).greets();
+      }).to.throw( Error );
+    });
   });
 });
