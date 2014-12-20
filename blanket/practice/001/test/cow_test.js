@@ -12,4 +12,11 @@ describe( 'Cow', function() {
       expect( cow.name ).to.equal( 'Kate' );
     });
   });
+
+  describe( '/#greets', function() {
+    it( 'should greet passed target', function() {
+      var greetings = ( new Cow( 'Kate' )).greets( 'Baby' );
+      expect( greetings ).to.equal( 'Kate greets Baby' );
+    });
+  });
 });
