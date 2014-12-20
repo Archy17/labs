@@ -26,5 +26,13 @@ describe( 'Cow', function() {
       sinon.assert.calledOnce( console.error );
       sinon.assert.calledWithExactly( console.error, 'Missing target');
     });
+
+    it( 'should log greetings', function() {
+      var greetings = ( new Cow( 'Kate' )).logGreets( 'Baby' );
+
+      sinon.assert.notCalled( console.error );
+      sinon.assert.calledOnce( console.log );
+      sinon.assert.calledWithExactly( console.log, 'Kate greets Baby' );
+    });
   });
 });
