@@ -22,6 +22,12 @@
           cb( err );
         }
       }, 1000, this );
+    },
+
+    logGreets : function( target ) {
+      if ( !target )
+        return console.error( 'Missing target' );
+      console.log( this.name + ' greets ' + target );
     }
   };
 
