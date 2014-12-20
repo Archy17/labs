@@ -8,7 +8,7 @@ describe( 'Cow', function() {
     sandbox = sinon.sandbox.create();
 
     // stub some console methods
-    sanbox.stub( window.console, 'log' );
+    sandbox.stub( window.console, 'log' );
     sandbox.stub( window.console, 'error' );
   });
 
