@@ -21,7 +21,7 @@
         } catch ( err ) {
           cb( err );
         }
-      }, 1000, this );
+      }, 100, this );
     },
 
     logGreets : function( target ) {
