@@ -10,4 +10,4 @@ emitter.on( 'pizza', function( message ) {
 });
 
 // emit an event
-emitter.emit( 'pizza', 'pizza is extremely yummy' );
+emitter.emit( 'pizza', 'pizza is REALLY extremely yummy' );
