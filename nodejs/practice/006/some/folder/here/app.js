@@ -5,7 +5,7 @@ var path = require( 'path-to' );
 var p3   = require( 'path-to' )( 3 );
 
 // using path-to module
-var data = require( path( 3, 'config.json' ));
+var data = require( path( 3, 'config' ));
 var sum  = require( p3 + 'sum' );
 
 console.log( data );
