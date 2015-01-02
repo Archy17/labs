@@ -25,4 +25,13 @@ describe( 'Cow', function() {
       expect( greetings ).to.equal( 'Kate greets Baby' );
     });
   });
+
+  describe( '#lateGreets', function() {
+    it( 'should pass an error if no target is passed', function( done ) {
+      ( new Cow()).lateGreets( null, function( err, greetings ) {
+        expect( err ).to.be.an.instanceof( Error );
+        done();
+      });
+    });
+  });
 });
