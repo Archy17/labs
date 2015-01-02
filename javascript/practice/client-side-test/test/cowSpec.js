@@ -19,5 +19,10 @@ describe( 'Cow', function() {
         ( new Cow()).greets();
       }).to.throw( Error );
     });
+
+    it( 'should greet passed target', function() {
+      var greetings = ( new Cow( 'Kate' )).greets( 'Baby' );
+      expect( greetings ).to.equal( 'Kate greets Baby' );
+    });
   });
 });
