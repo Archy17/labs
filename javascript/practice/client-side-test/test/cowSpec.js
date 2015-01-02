@@ -12,4 +12,12 @@ describe( 'Cow', function() {
       expect( cow.name ).to.equal( 'Kate' );
     });
   });
+
+  describe( '#greets', function() {
+    it( 'should throw if no target is passed in', function() {
+      expect( function() {
+        ( new Cow()).greets();
+      }).to.throw( Error );
+    });
+  });
 });
