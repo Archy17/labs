@@ -33,5 +33,12 @@ describe( 'Cow', function() {
         done();
       });
     });
+
+    it( 'should greet passed target after 310ms', function( done ) {
+      ( new Cow( 'Kate' )).lateGreets( 'Baby', function( err, greetings ) {
+        expect( greetings ).to.be.equal( 'Kate greets Baby' );
+        done();
+      });
+    });
   });
 });
