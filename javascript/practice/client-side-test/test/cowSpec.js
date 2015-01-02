@@ -6,5 +6,10 @@ describe( 'Cow', function() {
       var cow = new Cow();
       expect( cow.name ).to.equal( 'Anon cow' );
     });
+
+    it( "should set cow's name if provided", function() {
+      var cow = new Cow( 'Kate' );
+      expect( cow.name ).to.equal( 'Kate' );
+    });
   });
 });
