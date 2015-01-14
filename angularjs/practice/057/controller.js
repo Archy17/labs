@@ -22,6 +22,8 @@
       { name: "Chrome",            maker: "(Google)",             ticked: true  }
     ];
 
+    vm.outputData = [];
+
     ///////////// Methods
 
     /////////////

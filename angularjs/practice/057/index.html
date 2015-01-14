@@ -9,10 +9,15 @@
   
   <div multi-select
        input-model="vm.inputData"
+       output-model="vm.outputData"
        button-label="name"
        item-label="name"
        tick-property="ticked">    
   </div>
+
+  <pre>
+    {{ vm.outputData | json }}
+  </pre>
   
   <script src="../angular.js"></script>
   <script src="app.js"></script>
