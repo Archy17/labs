@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 57</title>
+  <link rel="stylesheet" href="bower_components/isteven-angular-multiselect/angular-multi-select.css">
+</head>
+<body ng-controller="SelectController as vm">
+  
+  <div multi-select
+       input-model="vm.inputData"
+       button-label="name"
+       item-label="name"
+       tick-property="ticked">    
+  </div>
+  
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+  <script src="bower_components/isteven-angular-multiselect/angular-multi-select.js"></script>
+  <script src="controller.js"></script>
+
+</body>
+</html>
