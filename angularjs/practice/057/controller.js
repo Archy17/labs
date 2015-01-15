@@ -35,8 +35,8 @@
       },
       { 
         name: "Safari",           
-         maker: "(Apple)",              
-         ticked: false 
+        maker: "(Apple)",              
+        ticked: false 
       },
       { 
         name: "Chrome",            
