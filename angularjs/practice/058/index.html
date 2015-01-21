@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 58</title>
+</head>
+<body ng-controller="MomentController as vm">
+  
+  <h2>{{ vm.m1 }}</h2>
+  <br>
+  <h2>{{ vm.m2 }}</h2>
+  <br>
+  <h2>{{ vm.diff }}</h2>
+  <br>
+  <h1>{{ vm.pDiff }}</h1>
+  <br>
+  <span am-time-ago="vm.message.time"></span>
+  <br>
+  <span>{{ vm.message.time | amTimeAgo }}</span>
+  <br>
+  <span>{{ vm.message.time | amDateFormat:'dddd, MMMM Do YYYY, h:mm:ss a' }}</span>
+  <br>
+  <span>{{ vm.message.time | amCalendar }}</span>
+  
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/moment/locale/pt-br.js"></script>
+  <script src="bower_components/angular-moment/angular-moment.js"></script>
+  <script src="readable-range.js"></script>
+  <script src="controller.js"></script>
+
+</body>
+</html>

@@ -30,3 +30,4 @@ A stack MEAN pode ser considerada como uma versão moderna da stack LAMP
 * O cliente envia verbos HTTP (GET, POST, PUT, DELETE) por uma URL e parâmetros que são *urlencoded*
 * A URL nos informa qual objeto devemos modificar
 * O Servidor responde com um código (200, 404, 500...) informando o resultado e um JSON válido
+* Uma grande vantagem dessa stack é que ela é toda JavaScript, e JSON é nativo a tal
