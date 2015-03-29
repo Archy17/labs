@@ -32,6 +32,16 @@ server.route({
   }
 });
 
+server.route({
+  method : 'GET',
+  path : '/{filename}',
+  handler : {
+    file : function( request ) {
+      return request.params.filename;
+    }
+  }
+});
+
 server.start( function() {
   console.log( 'Running at: ', server.info.uri );
 });
