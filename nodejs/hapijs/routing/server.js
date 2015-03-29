@@ -7,10 +7,16 @@ server.connection({ port : 3000 });
 // Routes
 server.route({
   method : 'GET',
-  path : '/hello/{user?}',
+  path : '/hello/{user*2}',
   handler : function( request, reply ) {
-    var user = request.params.user ? encodeURIComponent( request.params.user ) : 'Stranger';
-    reply( 'Hello ' + user + '!' );
+    var userParts = request.params.user.split( '/' );
+    reply( 
+      'Hello ' 
+      + encodeURIComponent( userParts[ 0 ]) 
+      + ' ' 
+      + encodeURIComponent( userParts[ 1 ]) 
+      + '!' 
+    );
   }
 });
 
