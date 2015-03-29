@@ -1,15 +1,26 @@
 var Hapi = require( 'hapi' );
+var Path = require( 'path' );
 
-var server = new Hapi.Server();
+var server = new Hapi.Server({
+  connections : {
+    routes : {
+      files : {
+        relativeTo : Path.join( __dirname, 'public' )
+      }
+    }
+  }
+});
 
-server.connection({ port : 3000 });
+server.connection({
+  port : 3000 
+});
 
 // Routes
 server.route({
   method : 'GET',
   path : '/hapi.png',
   handler : function( request, reply ) {
-    reply.file( 'public/hapi.png' );
+    reply.file( 'hapi.png' );
   }
 });
 
