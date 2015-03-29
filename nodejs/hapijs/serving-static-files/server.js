@@ -24,6 +24,14 @@ server.route({
   }
 });
 
+server.route({
+  method : 'GET',
+  path : '/hapijs',
+  handler : {
+    file : 'hapi.png'
+  }
+});
+
 server.start( function() {
   console.log( 'Running at: ', server.info.uri );
 });
