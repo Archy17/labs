@@ -30,7 +30,9 @@ server.route({
   method  : 'GET',
   path    : '/',
   handler : function( request, reply ) {
-    server.methods.add( 2, 3, reply );
+    server
+      .methods
+      .add( 2, 3, reply );
   }
 });
 
@@ -38,7 +40,16 @@ server.route({
   method  : 'GET',
   path    : '/add/{num*2}',
   handler : function( request, reply ) {
-    
+
+    var values = request.params.num.split( '/' );
+
+    server
+      .methods
+      .add( 
+        parseInt( encodeURIComponent( values[ 0 ]), 10 ),
+        parseInt( encodeURIComponent( values[ 1 ]), 10 ),
+        reply
+      );
   }
 });
 
