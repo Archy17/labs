@@ -53,6 +53,23 @@ server.route({
   }
 });
 
+server.route({
+  method  : 'GET',
+  path    : '/multiply/{num*2}',
+  handler : function( request, reply ) {
+    
+    var values = request.params.num.split( '/' );
+
+    server
+      .methods
+      .multiply(
+        parseInt( encodeURIComponent( values[ 0 ]), 10 ),
+        parseInt( encodeURIComponent( values[ 1 ]), 10 ),
+        reply
+      );
+  }
+});
+
 server.start( function() {
   console.log( 'Running at:', server.info.uri );
 });
