@@ -15,6 +15,8 @@ exports
 ///////////// Methods Declaration
 function register( server, options, next ) {
   
+  var tasks = [];
+
   server
     .route([
       {
@@ -22,6 +24,24 @@ function register( server, options, next ) {
         path    : '/tasks',
         handler : function( request, reply ) {
           reply( 'Do all the things!' );
+        }
+      },
+      {
+        method  : 'POST',
+        path    : '/tasks',
+        handler : function( request, reply ) {
+          // Get the task
+          var task = request.payload.task;
+          // Let's store the class
+          var key = tasks.push( task );
+
+          console.log( task );
+          console.log( tasks );
+
+          reply({
+            key : key - 1,
+            task : task 
+          });
         }
       }
     ]);
