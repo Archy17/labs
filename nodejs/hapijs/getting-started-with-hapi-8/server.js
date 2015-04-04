@@ -11,25 +11,6 @@ server
     labels : [ 'web' ]
   });
 
-// defining our routes
-server
-  .route([
-    {
-      method  : 'GET',
-      path    : '/',
-      handler : function( request, reply ) {
-        reply( 'Hello Hapi 8!' );
-      }
-    },
-    {
-      method  : 'GET',
-      path    : '/login',
-      handler : function( request, reply ) {
-        reply( 'Login' );
-      }
-    }
-  ]);
-
 // exploring request lifecycle
 server
   .ext( 'onRequest', function( request, reply ) {
@@ -41,12 +22,29 @@ server
    }
   });
 
-// starting the server
+// registering plugins
 server
-  .start( function( err ) {
+  .register([
+    {
+      register : require( './my-plugin' ),
+      options  : {
+        message : 'Hello!'
+      }
+    }
+  ], function( err ) {
     if ( err ) {
       throw err;
     }
 
-    console.log( 'Running at:', server.info.uri );
+    // starting the server
+    server
+      .start( function( err ) {
+        if ( err ) {
+          throw err;
+        }
+
+        console.log( 'Running at:', server.info.uri );
+      });
+        
   });
+
