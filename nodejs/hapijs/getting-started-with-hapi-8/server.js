@@ -13,12 +13,32 @@ server
 
 // defining our routes
 server
-  .route({
-    method  : 'GET',
-    path    : '/',
-    handler : function( request, reply ) {
-      reply( 'Hello Hapi 8!' );
+  .route([
+    {
+      method  : 'GET',
+      path    : '/',
+      handler : function( request, reply ) {
+        reply( 'Hello Hapi 8!' );
+      }
+    },
+    {
+      method  : 'GET',
+      path    : '/login',
+      handler : function( request, reply ) {
+        reply( 'Login' );
+      }
     }
+  ]);
+
+// exploring request lifecycle
+server
+  .ext( 'onRequest', function( request, reply ) {
+   // console.log( request.info );
+   // console.log( request.url );
+   if ( request.url.path === '/home' ) {
+     request.setUrl( '/login' );
+     return reply.continue();
+   }
   });
 
 // starting the server
