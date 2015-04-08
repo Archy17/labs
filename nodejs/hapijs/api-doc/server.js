@@ -23,7 +23,7 @@ server
     path    : '/',
     method  : 'GET',
     handler : function( request, reply ) {
-      console.log( server.load );
+      console.log( server.listener );
       reply( server.app.key );
     }
   });
