@@ -9,6 +9,12 @@ server
   });
 
 server
+  .connection({
+    host : 'localhost',
+    port : Number( process.argv[ 2 ] || 8000 )
+  });
+
+server
   .app
   .key = 'value';
 
@@ -17,7 +23,7 @@ server
     path    : '/',
     method  : 'GET',
     handler : function( request, reply ) {
-      console.log( server.info );
+      console.log( server.load );
       reply( server.app.key );
     }
   });
