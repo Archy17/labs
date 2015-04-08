@@ -19,12 +19,21 @@ server
   .key = 'value';
 
 server
+  .method( 'hello', function( person ) {
+    return next( null, 'Hello ' + person + '!' );
+  });
+
+server
   .route({
     path    : '/',
     method  : 'GET',
     handler : function( request, reply ) {
       console.log( server.listener );
-      reply( server.app.key );
+      server
+        .methods
+        .hello( 'Eric', function( err, result ) {
+          reply( result );
+        });
     }
   });
 
