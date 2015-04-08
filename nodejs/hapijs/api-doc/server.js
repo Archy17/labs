@@ -19,7 +19,7 @@ server
   .key = 'value';
 
 server
-  .method( 'hello', function( person ) {
+  .method( 'hello', function( person, next ) {
     return next( null, 'Hello ' + person + '!' );
   });
 
