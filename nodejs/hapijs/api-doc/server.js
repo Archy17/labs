@@ -17,6 +17,7 @@ server
     path    : '/',
     method  : 'GET',
     handler : function( request, reply ) {
+      console.log( server.info );
       reply( server.app.key );
     }
   });
