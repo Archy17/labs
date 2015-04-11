@@ -51,7 +51,7 @@
       console.log( '<<< End >>>' );
     }
   
-  };
+  }
 
   function init() {
     player( playlist ); 
