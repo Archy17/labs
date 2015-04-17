@@ -1,0 +1,19 @@
+{
+  "name": "060",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eric Douglas <eric.douglas.mail@gmail.com> (https://github.com/ericdouglas)",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "karma": "^0.12.31",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^0.1.10",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "mocha": "^2.2.4"
+  }
+}
