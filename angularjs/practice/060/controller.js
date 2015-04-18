@@ -6,9 +6,11 @@
     .module( 'app' )
     .controller( 'TestController', TestController );
 
-  TestController.$inject = [];
+  TestController.$inject = [
+    '$scope'
+  ];
 
-  function TestController() {
+  function TestController( $scope ) {
 
     var vm = this;
 
@@ -16,8 +18,12 @@
     vm.firstName = '';
     vm.lastName  = '';
 
+    $scope.songs = [ 'Take the time' ];
+
     ///////////// Public Methods
     vm.getFullName = getFullName;
+
+    $scope.addSong = addSong;
 
     ///////////// Private Methods
 
@@ -25,6 +31,12 @@
     function getFullName() {
 
       return vm.firstName + ' ' + vm.lastName;
+
+    }
+
+    function addSong( song ) {
+
+      $scope.songs.push( song );
 
     }
 
