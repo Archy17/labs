@@ -4,21 +4,29 @@
 
   angular
     .module( 'app' )
-    .controller( 'DirController', DirController );
+    .controller( 'TestController', TestController );
 
-  DirController.$inject = [];
+  TestController.$inject = [];
 
-  function DirController() {
+  function TestController() {
 
     var vm = this;
 
     ///////////// Properties
+    vm.firstName = '';
+    vm.lastName  = '';
 
     ///////////// Public Methods
+    vm.getFullName = getFullName;
 
     ///////////// Private Methods
 
     ///////////// Methods Declarations
+    function getFullName() {
+
+      return vm.firstName + ' ' + vm.lastName;
+
+    }
 
   }
 
