@@ -32,6 +32,9 @@
       .get( 'api/get-instruments')
       .success( function( data ) {
         $scope.instruments = data;
+      })
+      .error( function( e ) {
+        $scope.status = 'ERROR';
       });
 
     ///////////// Methods Declarations
