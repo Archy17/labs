@@ -7,25 +7,32 @@
     .controller( 'TestController', TestController );
 
   TestController.$inject = [
-    '$scope'
+    '$scope',
+    '$http'
   ];
 
-  function TestController( $scope ) {
+  function TestController( $scope, $http ) {
 
     var vm = this;
 
     ///////////// Properties
-    vm.firstName = '';
-    vm.lastName  = '';
+    vm.firstName       = '';
+    vm.lastName        = '';
 
-    $scope.songs = [ 'Take the time' ];
+    $scope.songs       = [ 'Take the time' ];
+    $scope.instruments = [ 'guitar' ];
 
     ///////////// Public Methods
-    vm.getFullName = getFullName;
+    vm.getFullName     = getFullName;
 
-    $scope.addSong = addSong;
+    $scope.addSong     = addSong;
 
     ///////////// Private Methods
+    $http
+      .get( 'api/get-instruments')
+      .success( function( data ) {
+        $scope.instruments = data;
+      });
 
     ///////////// Methods Declarations
     function getFullName() {

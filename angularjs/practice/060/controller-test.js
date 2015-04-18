@@ -29,9 +29,37 @@ describe( 'TestController', function() {
       });
 
       scope.addSong( 'The best of times' );
-      
+
       scope.songs.should.contain( 'The best of times' );
       scope.songs.should.contain( 'Take the time' );
+
+    }));
+
+  });
+
+  describe( 'get-instruments result', function() {
+
+    it( 'should be added to scope', inject( function( $controller, $httpBackend ) {
+
+      var scope = {};
+
+      $httpBackend
+        .when( 'GET', 'api/get-instruments')
+        .respond([
+          'vocals',
+          'guitar',
+          'sitar'
+        ]);
+
+      var testController = $controller( 'TestController', {
+        $scope : scope
+      });
+
+      $httpBackend.flush();
+
+      scope.instruments.should.contain( 'vocals' );
+      scope.instruments.should.contain( 'guitar' );
+      scope.instruments.should.contain( 'sitar' );
 
     }));
 
