@@ -9,11 +9,15 @@
   "author": "Eric Douglas <eric.douglas.mail@gmail.com> (https://github.com/ericdouglas)",
   "license": "ISC",
   "devDependencies": {
+    "angular-mocks": "^1.3.15",
     "chai": "^2.2.0",
     "karma": "^0.12.31",
     "karma-chai": "^0.1.0",
     "karma-mocha": "^0.1.10",
     "karma-phantomjs-launcher": "^0.1.4",
     "mocha": "^2.2.4"
+  },
+  "dependencies": {
+    "angular": "^1.3.15"
   }
 }
