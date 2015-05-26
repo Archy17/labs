@@ -6,9 +6,7 @@ describe( 'TestController', function() {
 
     it( 'should handle names correctly', inject( function( $controller ) {
 
-      var testController = $controller( 'TestController', {
-        $scope : {}
-      });
+      var testController = $controller( 'TestController' );
 
       testController.firstName = 'Eric';
       testController.lastName  = 'Douglas';
