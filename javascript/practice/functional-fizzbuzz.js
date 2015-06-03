@@ -9,6 +9,8 @@
 var totalNumbers = 100;
 var numbersArray = new Array( totalNumbers + 1 ).join( 1 ).split( '' );
 
+// just to convert & create the numbers!!!
+// do not modify data in FP!!!
 numbersArray
   .forEach( function( number, index, array ) {
   
