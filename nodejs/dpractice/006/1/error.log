@@ -1,0 +1,8 @@
+error: Hello eric
+error: Number 13
+error: JSON {"user":"Eric"}
+error: Obj {"name":"eric"}
+warn: Hello eric
+warn: Number 13
+warn: JSON {"user":"Eric"}
+warn: Obj {"name":"eric"}
