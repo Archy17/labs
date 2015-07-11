@@ -19,7 +19,7 @@ var _readFile = _readFile;
 if ( process.argv.length <= 2 ) {
   _displayHelp(); 
 } else {
-  var argsPassed = process.argv.slice( 2, process.argv.length );
+  var argsPassed = process.argv.slice( 2 );
 
   argsPassed
     .forEach( function( arg, index, array ) {

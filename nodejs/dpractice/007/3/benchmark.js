@@ -15,7 +15,7 @@ var args = {
 ///////////// Private Properties
 var _config = {
   "versions" : "0.0.1"
-}
+};
 
 ///////////// Private Methods
 var _displayHelp = _displayHelp;
@@ -26,6 +26,15 @@ var _showVersion = _showVersion;
 // no arguments passed
 if ( process.argv.length <= 2 ) {
   _displayHelp();
+} else {
+  var argsPassed = process.argv.slice( 2 );
+
+  argsPassed
+    .forEach( function( arg, index, array ) {
+      if ( args[ arg ]) {
+        args[ arg ][ 0 ].apply( this, array.slice( index + 1 ));
+      }
+    });
 }
 
 ///////////// Functions Declarations
@@ -41,7 +50,18 @@ function _displayHelp() {
 }
 
 function _readFile( file ) {
-
+  if ( file && file.length ) {
+    console.log( 'Start to read', file );
+    console.time( 'read' );
+    var stream = require( 'fs' ).createReadStream( file );
+    stream.on( 'end', function() {
+      console.timeEnd( 'read' );
+    });
+    stream.pipe( process.stdout );
+  } else {
+    console.error( 'You must pass a name of the file to be read' );
+    process.exit( 1 );
+  }
 }
 
 function _showVersion() {
