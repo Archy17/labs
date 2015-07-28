@@ -1,0 +1,7 @@
+<ul>
+  {{#each model as |item|}}
+    <li><a href={{item.url}}>{{item.title}}</a></li>
+  {{else}}
+    <li>You've not favorited any link.</li>
+  {{/each}}
+</ul>
