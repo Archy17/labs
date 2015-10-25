@@ -1,0 +1,14 @@
+{
+  "name": "core-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha assert.js"
+  },
+  "author": "Eric Douglas <eric.douglas.mail@gmail.com> (https://github.com/ericdouglas)",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "2.3.3"
+  }
+}
