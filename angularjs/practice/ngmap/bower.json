@@ -1,0 +1,21 @@
+{
+  "name": "ngmap-test",
+  "homepage": "https://github.com/ericdouglas/labs",
+  "authors": [
+    "Eric Douglas <eric.douglas.mail@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ngmap": "^1.17.3",
+    "angular": "^1.5.5"
+  }
+}
