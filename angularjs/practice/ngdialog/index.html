@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>ng-dialog</title>
+  <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog.css">
+  <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog-theme-default.css">
+</head>
+<body ng-controller="mainController as vm">
+  <h1 ng-bind="vm.title"></h1>
+
+  <button ng-click="vm.openModal()">Open Modal</button>
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/ng-dialog/js/ngDialog.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
