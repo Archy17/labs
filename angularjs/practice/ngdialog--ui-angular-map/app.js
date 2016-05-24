@@ -24,8 +24,8 @@
     ///////////// index-01.html
     vm.address = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
 
-
     ///////////// index-02.html
+    
     $scope.map = {center: {latitude: 40.1451, longitude: -99.6680 }, zoom: 4 };
     $scope.options = {scrollwheel: false};
     $scope.coordsUpdates = 0;
@@ -74,5 +74,7 @@
       }, 2000);
     }, 1000);
 
+    $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+    vm.address = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
   }
 })();
