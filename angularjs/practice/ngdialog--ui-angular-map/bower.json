@@ -1,0 +1,22 @@
+{
+  "name": "ngdialgog-ngmap",
+  "homepage": "https://github.com/ericdouglas/labs",
+  "authors": [
+    "Eric Douglas <eric.douglas.mail@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ng-dialog": "^0.6.1",
+    "ngmap": "^1.17.3",
+    "angular-google-maps": "^2.3.3"
+  }
+}

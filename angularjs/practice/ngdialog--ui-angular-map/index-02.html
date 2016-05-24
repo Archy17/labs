@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>NGDIALOG + NGMAP</title>
+  <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog.css">
+  <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog-theme-default.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller="MainController as vm">
+  <h1 ng-bind="vm.title"></h1>
+
+  <p>
+    <button ng-click="vm.openModal()">Open Modal</button>
+  </p>
+
+  <div id="map_canvas">
+    <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
+        <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+        </ui-gmap-marker>
+    </ui-gmap-google-map>
+    <div ng-cloak>
+        <ul>
+            <li>coords update ctr: {{coordsUpdates}}</li>
+            <li>dynamic move ctr: {{dynamicMoveCtr}}</li>
+        </ul>
+    </div>
+</div>
+
+  <script src='bower_components/lodash/dist/lodash.js'></script>
+  <script src='bower_components/angular/angular.js'></script>
+  <script src='bower_components/angular-simple-logger/dist/angular-simple-logger.js'></script>
+  <script src='bower_components/angular-google-maps/dist/angular-google-maps.js'></script>
+
+  <script src="bower_components/ng-dialog/js/ngDialog.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
