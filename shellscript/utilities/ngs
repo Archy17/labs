@@ -1,0 +1,9 @@
+#!/bin/bash
+# ngs - Angular 1.x Feature Structure Folder/Files
+# Author: Eric Douglas @ericdouglas
+
+feature=$1
+
+mkdir $feature &&
+cd $feature &&
+touch {$feature.module.js,$feature.controller.js,$feature.service.js,$feature.template.html}
