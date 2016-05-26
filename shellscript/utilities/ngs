@@ -6,4 +6,4 @@ feature=$1
 
 mkdir $feature &&
 cd $feature &&
-touch {$feature.module.js,$feature.controller.js,$feature.service.js,$feature.template.html}
+touch {$feature.module.js,$feature.controller.js,$feature.service.js,$feature.html}
