@@ -1,0 +1,16 @@
+<div class="modal-header">
+    <h3 class="modal-title">{{ vm.modalTitle }}</h3>
+</div>
+
+<div class="modal-body">
+    <ul>
+        <li ng-repeat="guitar in vm.guitars track by guitar.id">{{ guitar.name + ': ID ' + guitar.id }}</li>
+    </ul>
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-danger"
+            ng-click="vm.close()">Close</button>
+    <button class="btn btn-success"
+            ng-click="vm.buy()">Buy</button>
+</div>
