@@ -16,13 +16,6 @@
 
     ///////////// Public Properties
     vm.title      = 'UI Bootstrap Modal';
-    vm.modalTitle = 'UI Modal - Guitar Shop';
-
-    vm.guitars = [
-      { name: 'MusicMan', id: 1 },
-      { name: 'Ibanez', id: 2 },
-      { name: 'PRS', id: 3 }
-    ];
 
     ///////////// Private Properties
 

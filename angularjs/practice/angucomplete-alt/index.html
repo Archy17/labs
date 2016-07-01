@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Angucomplete Alt</title>
+    <link rel="stylesheet" src="bower_components/angucomplete-alt/angucomplete-alt.css"></link>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-cloak
+      ng-controller="MainController as vm">
+    <h1>{{ vm.title }}</h1>
+
+    <angucomplete-alt id="ex1"
+              placeholder="Search guitars"
+              pause="100"
+              selected-object="vm.guitar"
+              local-data="vm.guitars"
+              search-fields="name"
+              title-field="name"
+              minlength="1"
+              input-class="angucomplete-holder"
+              match-class="highlight">
+    </angucomplete-alt>
+
+    <pre><code>{{ vm.guitar | json }}</code></pre>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angucomplete-alt/dist/angucomplete-alt.min.js"></script>
+    <script src="app.js"></script>
+    <script src="main.controller.js"></script>
+</body>
+</html>

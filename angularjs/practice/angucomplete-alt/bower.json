@@ -1,0 +1,20 @@
+{
+  "name": "angu",
+  "homepage": "https://github.com/ericdouglas/labs",
+  "authors": [
+    "Eric Douglas <eric.douglas.mail@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angucomplete-alt": "^2.4.1"
+  }
+}
