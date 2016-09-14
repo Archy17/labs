@@ -1,0 +1,7 @@
+.panel {
+    display: block;
+    padding: 10px;
+    background-color: #eee;
+    font-size: 2em;
+    font-weight: bold;
+}

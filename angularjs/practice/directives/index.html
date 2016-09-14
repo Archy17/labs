@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="directives">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Custom Directives</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body ng-controller="MainController as vm">
+    <h1>Angular Custom Directives</h1>
+
+    <superman></superman>
+
+    <first-directive message="Stay hungry"></first-directive>
+    <first-directive message="Stay foolish"></first-directive>
+
+    <br>
+
+    <span enter="panel" leave name="<span>">Enter and Leave directives</span>
+
+    <br>
+    
+    <kid done="vm.logChore(chore)"></kid>
+
+    <br>
+    
+    <div phone dial="vm.callHome(message)"></div>
+    <div phone dial="vm.callHome(message)"></div>
+    <div phone dial="vm.callHome(message)"></div>
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="main.controller.js"></script>
+    <script src="superman.directive.js"></script>
+    <script src="first.directive.js"></script>
+    <script src="enter.directive.js"></script>
+    <script src="leave.directive.js"></script>
+    <script src="kid.directive.js"></script>
+    <script src="phone.directive.js"></script>
+    <script src=""></script>
+</body>
+</html>
