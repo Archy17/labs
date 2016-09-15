@@ -1,0 +1,11 @@
+* {
+    font-family: serif;
+}
+
+.title {
+    font-size: 3em;
+}
+
+.spotlight {
+    background-color: #3498db;
+}
