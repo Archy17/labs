@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <title>Sortable Columns</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-sortable/1.3.6/ng-sortable.min.css">
+    </head>
+
+    <body ng-controller="MainController as vm" ng-cloak>
+      <h1>Draggable Columns & LocalStorage</h1>
+
+        <div id="horizontal-container">
+          <table>
+            <thead>
+              <tr as-sortable="vm.sortableOptions"
+                  ng-model="vm.headers"
+                  ng-mouseup="vm.updateHeader(vm.headers)">
+                <th ng-repeat="header in vm.headers"
+                    as-sortable-item
+                    ng-if="header.display"
+                    style="display: table-cell;">
+                  <span as-sortable-item-handle>{{ header.name }}</span>
+                </th>
+              </tr>      
+            </thead>
+            <tbody>
+              <tr ng-repeat="row in vm.itemsList">
+                <td ng-repeat="header in vm.headers"
+                    ng-if="header.display">
+                  {{ row[header.prop] }}
+                </td>
+              </tr>      
+            </tbody>
+          </table>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <script src="app.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ng-sortable/1.3.6/ng-sortable.min.js"></script>
+    </body>
+</html>
