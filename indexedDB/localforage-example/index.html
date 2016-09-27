@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="storage">
+<head>
+    <meta charset="UTF-8">
+    <title>IndexedDB - localforage</title>
+
+    <link rel="stylesheet" href="main.css">
+</head>
+<body ng-controller="MainController as vm" ng-cloak>
+    <h1>{{ ::vm.title }}</h1>
+
+    <ul>
+        <li ng-repeat="item in vm.list track by $index"
+            class="tech">
+            <strong>{{ ::item.name }}</strong>
+            <ul>
+                <li ng-repeat="fw in item.frameworks track by $index">
+                    <strong>Name</strong>: {{ ::fw.name }} -
+                    <strong>Members</strong>: {{ ::fw.members }}
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- Vendor JS -->
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/localforage/dist/localforage.min.js"></script>
+
+    <!-- App JS -->
+    <script src="app.js"></script>
+    <script src="main.controller.js"></script>
+    <script src="main.service.js"></script>
+    <script src="main.constants.js"></script>
+</body>
+</html>
