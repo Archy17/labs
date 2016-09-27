@@ -1,0 +1,58 @@
+code {
+    background: #2db34a;
+    border-radius: 6px;
+    color: #fff;
+    display: block;
+    font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+    padding: 24px 15px;
+    text-align: center;
+}
+
+h1,
+.clearfix,
+header,
+section,
+aside,
+footer {
+    margin: 0 1.5% 24px 1.5%;
+}
+
+section {
+    float: left;
+    margin 0 1.5%;
+    width: 63%;
+}
+
+aside {
+    float: right;
+    margin 0 1.5%;
+    width: 30%;
+}
+
+footer {
+    margin-bottom: 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    clear: both;
+    *zoom: 1;
+
+    /* style - not required */
+    background: #bdc3c7;
+    border-radius: 6px;
+}
+
+.default {
+    background: none;
+    color: #000;
+}
