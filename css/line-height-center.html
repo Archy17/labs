@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>line-height center</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        .btn-primary {
+            background: #3cd27b;
+            color: #fff;
+            display: inline-block;
+            /* technique to vertically center a single line of text within an element */
+            height: 80px;
+            line-height: 80px;
+            /* end of technique */
+            padding-right: 30px;
+            padding-left: 30px;
+            border-radius: 5px;
+            border-bottom: 3px solid #27ae60;
+        }
+
+        .btn-primary:hover {
+            cursor: pointer;
+        }
+
+        .btn-primary:active {
+            border-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>line-height center</h1>    
+
+    <span class="btn-primary">Some Text Here</span>
+</body>
+</html>
