@@ -1,9 +1,9 @@
 {
-  "name": "hello-world",
+  "name": "thinking-in-react",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-scripts": "0.6.0"
+    "react-scripts": "0.6.1"
   },
   "dependencies": {
     "react": "^15.3.2",
