@@ -15,13 +15,26 @@ class SearchBar extends Component {
   }
 
   render() {
+    // spread attributes
+    let searchProps = {
+      type: 'text',
+      placeholder: 'Search...',
+      value: this.props.filterText,
+      ref: 'filterTextInput',
+      onChange: this.handleChange
+    };
+
     return (
       <form>
+        {/*
         <input type="text"
                placeholder="Search..."
                value={ this.props.filterText }
                ref="filterTextInput"
                onChange={ this.handleChange } />
+        */}
+
+        <input {...searchProps} />
         <p>
           <input type="checkbox"
           checked={ this.props.inStockOnly } 
