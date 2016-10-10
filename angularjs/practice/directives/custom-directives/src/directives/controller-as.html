@@ -1,0 +1,7 @@
+<h3>List of Items</h3>
+<p>
+    <button ng-click="vm.addItem()">Add new item</button>
+</p>
+<ul>
+    <li ng-repeat="item in vm.items track by $index">{{ ::item.model }} - {{ ::item.brand }} - ${{ ::item.price }}</li>
+</ul>

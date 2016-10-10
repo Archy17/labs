@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Directives</title>
+
+    <link rel="stylesheet" href="main.css">
+</head>
+<body ng-controller="MainController as vm">
+    <h1>Angular Directives</h1>
+
+    <hr>
+
+    <hello-world></hello-world>
+
+    <hr>
+
+    <h2>Isolated Scope: @ property</h2>
+    <p>We should pass a string to this property</p>
+    <isolated-scope-at-property name="{{ vm.customer.name }}"></isolated-scope-at-property>
+
+    <hr>
+
+    <h2>Isolate Scope: = property</h2>
+    <p>We can pass an object to this property</p>
+    <isolated-scope-equals-property customer="vm.customer"></isolated-scope-equals-property>
+
+    <hr>
+
+    <h2>Isolate Scope: & property</h2>
+    <p>We can pass a function (callback) to this property</p>
+    <isolated-scope-ampersand-property print="vm.print(vm.customer.name)"
+                                       name="{{ vm.customer.name }}"></isolated-scope-ampersand-property>
+    <hr>
+
+    <h2>Link Demo</h2>
+    <span link-demo>Link demo button</span>
+
+    <hr>
+
+    <h2>Using Controller instead of Link()</h2>
+    <p>Controller and ControllerAs inside directive</p>
+    <controller-as data="vm.guitars"></controller-as>
+
+    <hr>
+
+    <h2>ng-transclude - Transclusion</h2>
+    <p>Ability to put contents inside the directive</p>
+    <transclusion list="vm.guitars"
+                  title="Guitars">
+        <strong>Content inside directive</strong>
+        <div ng-repeat="item in vm.guitars track by $index">
+           <strong>{{ ::item.brand }} {{ ::item.model }}</strong> - {{ ::item.price }}
+        </div>
+    </transclusion>
+
+    <h3>List displayed out of directive</h3>
+    <div ng-repeat="item in vm.guitars track by $index">
+       <strong>{{ ::item.brand }} {{ ::item.model }}</strong> - {{ ::item.price }}
+    </div>
+
+    <hr>
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="src/app.js"></script>
+    <script src="src/controllers/main.controller.js"></script>
+    <script src="src/directives/hello-world.js"></script>
+    <script src="src/directives/isolated-scope-at-property.js"></script>
+    <script src="src/directives/isolated-scope-equals-property.js"></script>
+    <script src="src/directives/isolated-scope-ampersand-property.js"></script>
+    <script src="src/directives/link-demo.js"></script>
+    <script src="src/directives/controller-as.js"></script>
+    <script src="src/directives/transclusion.js"></script>
+</body>
+</html>
