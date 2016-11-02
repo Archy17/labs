@@ -5,6 +5,12 @@ import './App.css';
 ///////////// components
 import HelloWorld from './components/hello-world';
 import IntroducingJsx from './components/introducing-jsx';
+import Comment from './components/components-and-props/Comment';
+
+const author = {
+  avatarUrl: 'https://avatars2.githubusercontent.com/u/4119931?v=3&s=100',
+  name: 'Eric Douglas'
+};
 
 class App extends Component {
   render() {
@@ -18,6 +24,11 @@ class App extends Component {
         <HelloWorld name="React World" />
 
         <IntroducingJsx />
+
+        <Comment author={ author }
+                 text="Lorem ipsum dolor sit amet, consectetur adipisicing..."
+                 date={ new Date() }
+        />
       </div>
     );
   }
