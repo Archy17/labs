@@ -6,6 +6,7 @@ import './App.css';
 import HelloWorld from './components/hello-world';
 import IntroducingJsx from './components/introducing-jsx';
 import Comment from './components/components-and-props/Comment';
+import Clock from './components/Clock';
 
 const author = {
   avatarUrl: 'https://avatars2.githubusercontent.com/u/4119931?v=3&s=100',
@@ -17,7 +18,10 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src={ logo }
+               className="App-logo"
+               alt="logo"
+          />
           <h2>Welcome to React</h2>
         </div>
 
@@ -29,6 +33,8 @@ class App extends Component {
                  text="Lorem ipsum dolor sit amet, consectetur adipisicing..."
                  date={ new Date() }
         />
+
+        <Clock />
       </div>
     );
   }
