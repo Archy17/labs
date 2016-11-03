@@ -8,11 +8,17 @@ import IntroducingJsx from './components/introducing-jsx';
 import Comment from './components/components-and-props/Comment';
 import Clock from './components/Clock';
 import Toggle from './components/Toggle';
+import Greeting from './components/conditional-rendering/Greeting';
+import LoginControl from './components/conditional-rendering/LoginControl';
+import Mailbox from './components/conditional-rendering/Mailbox';
+import ConditionalOperator from './components/conditional-rendering/ConditionalOperator';
+import WarningBanner from './components/conditional-rendering/WarningBanner';
 
 const author = {
   avatarUrl: 'https://avatars2.githubusercontent.com/u/4119931?v=3&s=100',
   name: 'Eric Douglas'
 };
+const messages = ['React', 'Re: React', 'Re:Re: React'];
 
 class App extends Component {
   render() {
@@ -38,6 +44,17 @@ class App extends Component {
         <Clock />
 
         <Toggle />
+
+        <Greeting isLoggedIn={ true } />
+
+        <LoginControl />
+
+        <Mailbox unreadMessages={ messages } />
+
+        <ConditionalOperator name="" />
+
+        <WarningBanner warn={ true } />
+        <WarningBanner warn={ false } />
       </div>
     );
   }
