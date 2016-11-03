@@ -7,6 +7,7 @@ import HelloWorld from './components/hello-world';
 import IntroducingJsx from './components/introducing-jsx';
 import Comment from './components/components-and-props/Comment';
 import Clock from './components/Clock';
+import Toggle from './components/Toggle';
 
 const author = {
   avatarUrl: 'https://avatars2.githubusercontent.com/u/4119931?v=3&s=100',
@@ -35,6 +36,8 @@ class App extends Component {
         />
 
         <Clock />
+
+        <Toggle />
       </div>
     );
   }
