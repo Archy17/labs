@@ -13,12 +13,14 @@ import LoginControl from './components/conditional-rendering/LoginControl';
 import Mailbox from './components/conditional-rendering/Mailbox';
 import ConditionalOperator from './components/conditional-rendering/ConditionalOperator';
 import WarningBanner from './components/conditional-rendering/WarningBanner';
+import NumberList from './components/NumberList';
 
 const author = {
   avatarUrl: 'https://avatars2.githubusercontent.com/u/4119931?v=3&s=100',
   name: 'Eric Douglas'
 };
 const messages = ['React', 'Re: React', 'Re:Re: React'];
+const numbers = [1, 2, 3, 4, 5];
 
 class App extends Component {
   render() {
@@ -55,6 +57,8 @@ class App extends Component {
 
         <WarningBanner warn={ true } />
         <WarningBanner warn={ false } />
+
+        <NumberList numbers={ numbers } />
       </div>
     );
   }
