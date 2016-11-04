@@ -14,6 +14,10 @@ import Mailbox from './components/conditional-rendering/Mailbox';
 import ConditionalOperator from './components/conditional-rendering/ConditionalOperator';
 import WarningBanner from './components/conditional-rendering/WarningBanner';
 import NumberList from './components/NumberList';
+import ControlledComponent from './components/forms/ControlledComponent';
+import MultipleSelect from './components/forms/MultipleSelect';
+import ControlledTextarea from './components/forms/ControlledTextarea';
+import UncontrolledRadioButton from './components/forms/UncontrolledRadioButton';
 
 const author = {
   avatarUrl: 'https://avatars2.githubusercontent.com/u/4119931?v=3&s=100',
@@ -21,6 +25,7 @@ const author = {
 };
 const messages = ['React', 'Re: React', 'Re:Re: React'];
 const numbers = [1, 2, 3, 4, 5];
+const options = ['A', 'B'];
 
 class App extends Component {
   render() {
@@ -59,6 +64,14 @@ class App extends Component {
         <WarningBanner warn={ false } />
 
         <NumberList numbers={ numbers } />
+
+        <ControlledComponent />
+
+        <MultipleSelect options={ options } />
+
+        <ControlledTextarea />
+
+        <UncontrolledRadioButton />
       </div>
     );
   }
