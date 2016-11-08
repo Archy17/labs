@@ -1,0 +1,16 @@
+.FancyBorder {
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.FancyBorder-red {
+  border: 10px dashed red;
+}
+
+.FancyBorder-green {
+  border: 10px dotted green;
+}
+
+.FancyBorder-blue {
+  border: 10px double blue;
+}

@@ -19,6 +19,7 @@ import MultipleSelect from './components/forms/MultipleSelect';
 import ControlledTextarea from './components/forms/ControlledTextarea';
 import UncontrolledRadioButton from './components/forms/UncontrolledRadioButton';
 import Calculator from './components/lifting-state-up/Calculator';
+import WelcomeDialog from './components/composition-vs-inheritance/WelcomeDialog';
 
 const author = {
   avatarUrl: 'https://avatars2.githubusercontent.com/u/4119931?v=3&s=100',
@@ -77,6 +78,8 @@ class App extends Component {
         <UncontrolledRadioButton />
 
         <Calculator />
+
+        <WelcomeDialog />
       </div>
     );
   }
