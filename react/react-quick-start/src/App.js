@@ -18,6 +18,7 @@ import ControlledComponent from './components/forms/ControlledComponent';
 import MultipleSelect from './components/forms/MultipleSelect';
 import ControlledTextarea from './components/forms/ControlledTextarea';
 import UncontrolledRadioButton from './components/forms/UncontrolledRadioButton';
+import Calculator from './components/lifting-state-up/Calculator';
 
 const author = {
   avatarUrl: 'https://avatars2.githubusercontent.com/u/4119931?v=3&s=100',
@@ -32,9 +33,10 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={ logo }
-               className="App-logo"
-               alt="logo"
+          <img
+            src={ logo }
+            className="App-logo"
+            alt="logo"
           />
           <h2>Welcome to React</h2>
         </div>
@@ -43,9 +45,10 @@ class App extends Component {
 
         <IntroducingJsx />
 
-        <Comment author={ author }
-                 text="Lorem ipsum dolor sit amet, consectetur adipisicing..."
-                 date={ new Date() }
+        <Comment
+          author={ author }
+          text="Lorem ipsum dolor sit amet, consectetur adipisicing..."
+          date={ new Date() }
         />
 
         <Clock />
@@ -72,6 +75,8 @@ class App extends Component {
         <ControlledTextarea />
 
         <UncontrolledRadioButton />
+
+        <Calculator />
       </div>
     );
   }
