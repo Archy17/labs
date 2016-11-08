@@ -20,6 +20,7 @@ import ControlledTextarea from './components/forms/ControlledTextarea';
 import UncontrolledRadioButton from './components/forms/UncontrolledRadioButton';
 import Calculator from './components/lifting-state-up/Calculator';
 import WelcomeDialog from './components/composition-vs-inheritance/WelcomeDialog';
+import WelcomeSpecialDialog from './components/composition-vs-inheritance/specialization/WelcomeDialog';
 
 const author = {
   avatarUrl: 'https://avatars2.githubusercontent.com/u/4119931?v=3&s=100',
@@ -80,6 +81,8 @@ class App extends Component {
         <Calculator />
 
         <WelcomeDialog />
+
+        <WelcomeSpecialDialog />
       </div>
     );
   }
