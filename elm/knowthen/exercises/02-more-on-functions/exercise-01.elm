@@ -19,11 +19,11 @@ import String
 
 
 (~=) a b =
-    if String.left 1 a == String.left 1 b then
-        True
-    else
-        False
+    String.left 1 a == String.left 1 b
 
 
 main =
-    Html.text (toString ("Eric" ~= "Elm"))
+    "Eric"
+        ~= "Elm"
+        |> toString
+        |> Html.text
