@@ -3,7 +3,12 @@ import React from 'react';
 const Title = React.createClass({
   render: function() {
     return (
-      <h1>Hey, {this.props.name}</h1>
+      <div className="container">
+        <h1>Hey, {this.props.name}</h1>
+
+        <label htmlFor="input">Label htmlFor</label>
+        <input type="text" id="input"/>
+      </div>
     );
   }
 });
