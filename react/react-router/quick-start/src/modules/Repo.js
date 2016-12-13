@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 const Repo = ({ params }) => (
   <div>
-    <h2>{params.repoName}</h2>
+    <h2>{`${params.userName} ${params.repoName}`}</h2>
   </div>
 );
 
