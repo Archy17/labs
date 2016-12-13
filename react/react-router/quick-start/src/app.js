@@ -6,6 +6,11 @@ const App = ({ children }) => (
     <h1>dek-react</h1>
     <ul role="nav">
       <li>
+        <NavLink to="/" onlyActiveOnIndex={true}>
+          Home
+        </NavLink>
+      </li>
+      <li>
         <NavLink to="/about">
           About
         </NavLink>
