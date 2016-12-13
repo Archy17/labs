@@ -1,15 +1,19 @@
 import React, { PropTypes } from 'react';
-import { Link } from 'react-router';
+import NavLink from './modules/NavLink';
 
 const App = ({ children }) => (
   <div>
     <h1>dek-react</h1>
     <ul role="nav">
       <li>
-        <Link to="/about">About</Link>
+        <NavLink to="/about">
+          About
+        </NavLink>
       </li>
       <li>
-        <Link to="/repos">Repos</Link>
+        <NavLink to="/repos">
+          Repos
+        </NavLink>
       </li>
     </ul>
 
