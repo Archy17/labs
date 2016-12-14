@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Button from './Button';
+import LikeButton from './LikeButton';
 
 const App = React.createClass({
   render: function() {
@@ -14,6 +15,7 @@ const App = React.createClass({
           <Button>
             <span>Some text here</span>
           </Button>
+          <LikeButton />
         </div>
       </div>
     );
