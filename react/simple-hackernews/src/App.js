@@ -224,9 +224,9 @@ const Sort = ({ sortKey, onSort, activeSortKey, children }) => {
   );
 
   return (
-    <button onClick={() => onSort(sortKey)} className={sortClass} type="button">
+    <Button onClick={() => onSort(sortKey)} className={sortClass}>
       {children}
-    </button>
+    </Button>
   );
 };
 
