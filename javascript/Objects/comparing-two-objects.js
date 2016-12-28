@@ -8,6 +8,9 @@ module.exports = function(a, b) {
     .concat(Object.values(b))
     .toString();
 
+  console.log(aComp);
+  console.log(bComp);
+
   return aComp === bComp;
 }
 
