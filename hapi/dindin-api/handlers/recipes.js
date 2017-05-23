@@ -86,6 +86,3 @@ function star(request, reply) {
   });
 }
 
-// UPDATE CUSTOMERS
-// SET ADDRESS = 'Pune'
-// WHERE ID = 8;
