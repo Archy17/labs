@@ -13,7 +13,15 @@ server.route([
     method: 'GET',
     path: '/api/recipes',
     handler(request, reply) {
-      db.all('SELECT * FROM recipes', (err, results) => {
+      let sql = 'SELECT * FROM recipes';
+      const params = [];
+
+      if (request.query.cuisine) {
+        sql += ' WHERE cuisine = ?';
+        params.push(request.query.cuisine);
+      }
+
+      db.all(sql, params, (err, results) => {
         if (err) {
           throw err;
         }
