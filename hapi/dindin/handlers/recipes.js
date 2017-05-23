@@ -1,15 +1,15 @@
 'use strict';
 
 exports.find = function find(request, reply) {
-  let sql = 'SELECT * FROM recipes';
+  let query = 'SELECT * FROM recipes';
   const params = [];
 
   if (request.query.cuisine) {
-    sql += ' WHERE cuisine = ?';
+    query += ' WHERE cuisine = ?';
     params.push(request.query.cuisine);
   }
 
-  this.db.all(sql, params, (err, results) => {
+  this.db.all(query, params, (err, results) => {
     if (err) {
       throw err;
     }
@@ -19,10 +19,10 @@ exports.find = function find(request, reply) {
 };
 
 exports.findOne = function findOne(request, reply) {
-  const sql = 'SELECT * FROM recipes WHERE id = ?';
+  const query = 'SELECT * FROM recipes WHERE id = ?';
   const params = request.params.id;
 
-  this.db.get(sql, params, (err, result) => {
+  this.db.get(query, params, (err, result) => {
     if (err) {
       throw err
     }
@@ -32,5 +32,38 @@ exports.findOne = function findOne(request, reply) {
     }
 
     return reply('Not found').code(404);
+  });
+};
+
+exports.create = function create(request, reply) {
+  const query = 'INSERT INTO recipes (name, cooking_time, prep_time, serves, cuisine, ingredients, directions, user_id) VALUES (?,?,?,?,?,?,?,?)';
+  const {
+    name,
+    cooking_time,
+    prep_time,
+    serves,
+    cuisine,
+    ingredients,
+    directions,
+  } = request.payload;
+  const user_id = request.auth.credentials.id;
+
+  const params = [
+    name,
+    cooking_time,
+    prep_time,
+    serves,
+    cuisine,
+    ingredients,
+    directions,
+    user_id,
+  ];
+
+  this.db.run(query, params, err => {
+    if (err) {
+      throw err;
+    }
+
+    reply({ status: 'ok' });
   });
 };
