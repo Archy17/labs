@@ -21,4 +21,12 @@ module.exports = [
     },
     handler: Recipes.create,
   },
+  {
+    method: 'POST',
+    path: '/api/recipes/{id}/star',
+    config: {
+      auth: 'api',
+    },
+    handler: Recipes.star,
+  },
 ]
