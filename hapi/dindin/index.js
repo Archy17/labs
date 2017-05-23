@@ -29,6 +29,26 @@ server.route([
         reply(results);
       });
     },
+  },
+  {
+    method: 'GET',
+    path: '/api/recipes/{id}',
+    handler(request, reply) {
+      const sql = 'SELECT * FROM recipes WHERE id = ?';
+      const params = request.params.id;
+
+      db.get(sql, params, (err, result) => {
+        if (err) {
+          throw err
+        }
+
+        if (typeof result !== 'undefined') {
+          return reply(result);
+        }
+
+        return reply('Not found').code(404);
+      });
+    },
   }
 ]);
 

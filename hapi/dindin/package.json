@@ -2,5 +2,11 @@
   "dependencies": {
     "hapi": "^16.1.1",
     "sqlite3": "^3.1.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "scripts": {
+    "start": "nodemon index.js"
   }
 }
