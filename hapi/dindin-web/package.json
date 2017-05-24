@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "dindin-api": "^2.0.1",
+    "handlebars": "^4.0.10",
     "hapi": "^16.1.1",
     "inert": "^4.2.0",
     "vision": "^4.1.1"
