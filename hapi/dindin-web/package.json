@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "axios": "^0.16.1",
     "dindin-api": "^2.0.1",
     "handlebars": "^4.0.10",
     "hapi": "^16.1.1",
