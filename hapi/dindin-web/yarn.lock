@@ -155,6 +155,12 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
+boom@3.x.x:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/boom/-/boom-3.2.2.tgz#0f0cc5d04adc5003b8c7d71f42cca7271fef0e78"
+  dependencies:
+    hoek "4.x.x"
+
 boom@4.x.x, boom@^4.1.0:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/boom/-/boom-4.3.1.tgz#4f8a3005cb4a7e3889f749030fd25b96e01d2e31"
@@ -567,6 +573,14 @@ hapi-auth-bearer-token@4.x.x:
     hoek "^4.1.0"
     joi "^9.1.0"
 
+hapi-auth-cookie@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/hapi-auth-cookie/-/hapi-auth-cookie-7.0.0.tgz#1bb9130d85ab0efe02f7df518e864867616a49a4"
+  dependencies:
+    boom "3.x.x"
+    hoek "4.x.x"
+    joi "8.x.x"
+
 hapi@^16.1.1:
   version "16.1.1"
   resolved "https://registry.yarnpkg.com/hapi/-/hapi-16.1.1.tgz#0466db0703ba15cd00f07175ccf394d9cb56b1e0"
@@ -801,6 +815,15 @@ joi@10.x.x:
     hoek "4.x.x"
     isemail "2.x.x"
     items "2.x.x"
+    topo "2.x.x"
+
+joi@8.x.x:
+  version "8.4.2"
+  resolved "https://registry.yarnpkg.com/joi/-/joi-8.4.2.tgz#bd7774658fe99058d8994ed1d4b9962484ebb859"
+  dependencies:
+    hoek "4.x.x"
+    isemail "2.x.x"
+    moment "2.x.x"
     topo "2.x.x"
 
 joi@^9.1.0:

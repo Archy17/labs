@@ -4,6 +4,7 @@ const axios = require('axios');
 
 exports.home = home;
 exports.viewRecipe = viewRecipe;
+exports.login = login;
 
 function home(request, reply) {
   const API_URL = this.apiBaseUrl + '/recipes';
@@ -25,4 +26,8 @@ function viewRecipe(request, reply) {
     .catch(err => {
       throw err;
     });
+}
+
+function login(request, reply) {
+  reply.view('login');
 }
