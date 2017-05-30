@@ -28,6 +28,7 @@ server.register([
     layoutPath: './views/layout',
     layout: true,
     partialsPath: './views/partials',
+    helpersPath: './views/helpers',
     isCached: false,
   });
 
