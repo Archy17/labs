@@ -32,6 +32,26 @@ module.exports = [
   },
   {
     method: 'GET',
+    path: '/create',
+    handler: Pages.createRecipe,
+    config: {
+      auth: {
+        mode: 'required',
+      },
+    },
+  },
+  {
+    method: 'POST',
+    path: '/create',
+    handler: Actions.createRecipe,
+    config: {
+      auth: {
+        mode: 'required',
+      },
+    },
+  },
+  {
+    method: 'GET',
     path: '/{param*}',
     handler: Assets.servePublicDirectory,
   },
