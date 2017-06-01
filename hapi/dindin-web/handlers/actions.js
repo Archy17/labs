@@ -2,6 +2,7 @@ const axios = require('axios');
 
 exports.login = login;
 exports.createRecipe = createRecipe;
+exports.logout = logout;
 
 function login(request, reply) {
   const API_URL = `${this.apiBaseUrl}/login`;
@@ -36,4 +37,9 @@ function createRecipe(request, reply) {
     .catch(err => {
       throw err;
     });
+}
+
+function logout(request, reply) {
+  request.cookieAuth.clear();
+  reply.redirect(this.webBaseUrl);
 }
