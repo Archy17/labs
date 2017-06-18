@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "accept": "^2.1.4",
     "handlebars": "^4.0.10",
     "hapi": "^16.4.2",
     "vision": "^4.1.1"
