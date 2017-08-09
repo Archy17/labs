@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hello, Vue</title>
+</head>
+<body>
+  <div id="instance-1" v-html="text"></div>
+  <div id="instance-2" v-html="text"></div>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    new Vue({
+      el: '#instance-1',
+      data: { text: 'Vue Instance #1' },
+    });
+
+    new Vue({
+      el: '#instance-2',
+      data: { text: 'Vue Instance #2' },
+    });
+  </script>
+</body>
+</html>
