@@ -4,23 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
   <title>Hello, Vue</title>
-</head>
-<body>
-  <div id="instance-1" v-html="text"></div>
-  <div id="instance-2" v-html="text"></div>
 
   <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="instance-1">
+    {{ text }}
+
+    <input type="text" v-on:input="changeTitle">
+  </div>
+
+  <div id="instance-2">
+    {{ text }}
+  </div>
+
   <script>
     new Vue({
       el: '#instance-1',
+
       data: { text: 'Vue Instance #1' },
+
+      methods: {
+        changeTitle() { changeTitle(event, this) },
+      },
     });
 
     new Vue({
       el: '#instance-2',
+
       data: { text: 'Vue Instance #2' },
     });
+
+    function changeTitle(event, ctx) {
+      ctx.text = event.target.value;
+    }
   </script>
 </body>
 </html>
