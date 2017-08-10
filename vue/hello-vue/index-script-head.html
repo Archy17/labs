@@ -14,6 +14,8 @@
     {{ text }}
 
     <input type="text" v-on:input="changeTitle">
+
+    <button v-on:click="logText(text)">CLICK</button>
   </div>
 
   <div id="instance-2">
@@ -27,7 +29,8 @@
       data: { text: 'Vue Instance #1' },
 
       methods: {
-        changeTitle() { changeTitle(event, this) },
+        changeTitle,
+        logText,
       },
     });
 
@@ -37,8 +40,14 @@
       data: { text: 'Vue Instance #2' },
     });
 
-    function changeTitle(event, ctx) {
-      ctx.text = event.target.value;
+    function changeTitle(event) {
+      this.text = event.target.value;
+    }
+
+    function logText(text) {
+      console.log(text);
+
+      this.text += '!';
     }
   </script>
 </body>
