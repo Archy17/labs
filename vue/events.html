@@ -24,6 +24,20 @@
 
       - <span @mousemove.stop="">DEAD SPOT</span>
     </p>
+
+    <p>
+      <input type="text" @keyup.enter="logMe">
+    </p>
+
+    <p>
+      <input type="text" @keydown="value = $event.target.value">
+      {{ value }}
+
+      <br>
+
+      <input type="text" @keydown.enter="updateValue">
+      {{ value }}
+    </p>
   </div>
 
   <script>
@@ -34,12 +48,15 @@
         counter: 0,
         x: 0,
         y: 0,
+        value: '',
       },
 
       methods: {
         increase,
         decrease,
         updateCoordinates,
+        logMe,
+        updateValue,
       },
     });
 
@@ -57,6 +74,15 @@
     function updateCoordinates(event) {
       this.x = event.clientX;
       this.y = event.clientY;
+    }
+
+    function logMe(event) {
+      console.log(event.target.value);
+    }
+
+    function updateValue(event) {
+      console.log(event.target.value);
+      this.value = event.target.value;
     }
   </script>
 </body>
