@@ -11,13 +11,19 @@
   <div id="app">
     {{ counter }}
 
-    <button v-on:click="increase">
+    <button v-on:click="increase($event, 3)">
       Increase
     </button>
 
-    <button @click="decrease">
+    <button @click="decrease(-1, $event)">
       Decrease
     </button>
+
+    <p @mousemove="updateCoordinates">
+      Coordinates: X: {{ x }} - Y: {{ y }}
+
+      - <span @mousemove.stop="">DEAD SPOT</span>
+    </p>
   </div>
 
   <script>
@@ -26,21 +32,31 @@
 
       data: {
         counter: 0,
+        x: 0,
+        y: 0,
       },
 
       methods: {
         increase,
         decrease,
+        updateCoordinates,
       },
     });
 
     ////////// Methods
-    function increase() {
-      this.counter += 1;
+    function increase(event, step) {
+      console.log(event);
+      this.counter += step;
     }
 
-    function decrease() {
-      this.counter -= 1;
+    function decrease(step, event) {
+      console.log(event);
+      this.counter += step;
+    }
+
+    function updateCoordinates(event) {
+      this.x = event.clientX;
+      this.y = event.clientY;
     }
   </script>
 </body>
