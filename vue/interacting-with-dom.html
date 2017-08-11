@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Interacting with DOM</title>
+  <script src="vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <p v-once>
+      {{ title }}
+    </p>
+
+    <p>
+      {{ sayHello() }}
+    </p>
+
+    <p>
+      {{ greeting() }} - <a v-bind:href="link">vue.org</a> <br>
+      {{ greeting() }} - <a :href="link">vuejs.org</a>
+    </p>
+
+    <p v-html="finishedLink"></p>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+
+      data: {
+        title: 'Hello, Vue',
+        link: 'https://vuejs.org',
+        finishedLink: `<a href="https://vuejs.org">Go to Vue.js org</a>`,
+      },
+
+      methods: {
+        sayHello,
+        greeting,
+      },
+    });
+
+    ////////// Methods
+    function sayHello() {
+      this.title = 'Hey, Vue'
+      return 'Hey, you :D'
+    }
+
+    function greeting() {
+      return `${this.title} fellow!`
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Events</title>
+  <script src="vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    {{ counter }}
+
+    <button v-on:click="increase">
+      Increase
+    </button>
+
+    <button @click="decrease">
+      Decrease
+    </button>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+
+      data: {
+        counter: 0,
+      },
+
+      methods: {
+        increase,
+        decrease,
+      },
+    });
+
+    ////////// Methods
+    function increase() {
+      this.counter += 1;
+    }
+
+    function decrease() {
+      this.counter -= 1;
+    }
+  </script>
+</body>
+</html>
