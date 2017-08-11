@@ -23,17 +23,22 @@
 # We print the sum of the array's elements, which is: 1 + 2 + 3 + 4 + 10 + 11 = 31.
 
 defmodule Solution do
+  def main do
+    length   = get_input() # unused
+    integers = get_input()
+
+    sum_integers(integers) |> IO.puts
+  end
+
+  def get_input do
+    IO.gets("")
+    |> String.trim
+  end
+
   defp sum_integers(integers) do
     integers
     |> String.split
     |> Enum.reduce(0, fn(num, acc) -> String.to_integer(num) + acc end)
-  end
-
-  def main do
-    length   = IO.gets("") |> String.trim # unused
-    integers = IO.gets("") |> String.trim
-
-    sum_integers(integers) |> IO.puts
   end
 end
 

@@ -1,11 +1,17 @@
 defmodule Solution do
-  defp sum(a,b), do: a + b
-
   def main do
-    a = IO.gets("") |> String.trim |> String.to_integer
-    b = IO.gets("") |> String.trim |> String.to_integer
+    a = get_input()
+    b = get_input()
 
     sum(a,b) |> IO.puts
+  end
+
+  def sum(a,b), do: a + b
+
+  def get_input do
+    IO.gets("")
+    |> String.trim
+    |> String.to_integer
   end
 end
 

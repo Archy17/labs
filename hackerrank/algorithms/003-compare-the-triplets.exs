@@ -38,6 +38,13 @@
 # 1 1
 
 defmodule Solution do
+  def main do
+    a = Solution.get_list
+    b = Solution.get_list
+
+    compare(a, b) |> IO.puts
+  end
+
   def check(a, b) do
     if (a > b), do: 1, else: 0
   end
@@ -54,13 +61,6 @@ defmodule Solution do
     |> String.trim
     |> String.split
     |> Enum.map(fn i -> String.to_integer(i) end)
-  end
-
-  def main do
-    a = Solution.get_list
-    b = Solution.get_list
-
-    compare(a, b) |> IO.puts
   end
 end
 
