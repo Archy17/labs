@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-for</title>
+  <script src="vue.js"></script>
+</head>
+<body>
+  <h1>v-for</h1>
+
+  <div id="app">
+    <ul>
+      <li v-for="lang in languages" :key="lang">{{ lang }}</li>
+    </ul>
+
+    <ul>
+      <li v-for="(lang, index) in languages">#{{ index }} - {{ lang }}</li>
+    </ul>
+
+    <template v-for="(lang, index) in languages">
+      <h1>#{{ index }}</h1>
+      <p>{{ lang }}</p>
+    </template>
+
+    <br>
+
+    <ul>
+      <li v-for="author in authors">
+        <div v-for="(value, key, index) in author">
+          {{ key }}: {{ value }} - ({{ index }})
+        </div>
+        <br>
+      </li>
+    </ul>
+
+    <ul>
+      <li v-for="n in 5">{{ n }}</li>
+    </ul>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+
+      data: {
+        languages: [
+          'elixir',
+          'erlang',
+          'rust',
+          'javascript',
+        ],
+
+        authors: [
+          { name: 'josé', lang: 'elixir', year: 2012 },
+          { name: 'joe', lang: 'erlang', year: 1986 },
+          { name: 'mozilla', lang: 'rust', year: 2010 },
+          { name: 'brendan', lang: 'javascript', year: 1995 },
+        ],
+      },
+    });
+  </script>
+</body>
+</html>
