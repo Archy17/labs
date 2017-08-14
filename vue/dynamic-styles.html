@@ -23,6 +23,7 @@
     <div class="demo" :style="{'background-color': color}"></div>
     <div class="demo" :style="{backgroundColor: 'dark' + color}"></div>
     <div class="demo" :style="dynamicStyle"></div>
+    <div class="demo" :style="[dynamicStyle, { height: size + 'px' }]"></div>
 
     <hr>
 
@@ -49,7 +50,7 @@
       return {
         backgroundColor: this.color,
         width: this.size + 'px',
-        height: this.size + 'px',
+        // height: this.size + 'px',
       }
     }
   </script>
