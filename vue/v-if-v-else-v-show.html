@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-if, v-else, v-else-if and v-show</title>
+  <script src="vue.js"></script>
+</head>
+<body>
+  <h1>v-if, v-else, v-else-if and v-show</h1>
+
+  <div id="app">
+    <p v-if="show">v-if text here</p>
+    <p v-else-if="!show">displayed by v-else-if</p>
+
+    <p v-if="show">another v-if text here</p>
+    <p v-else>v-else text here!</p>
+
+    <template v-if="show">
+      alternative way to show/hide texts without the side effect of divs
+    </template>
+
+    <br>
+
+    <p v-show="show">
+      this text will be hide with v-show
+    </p>
+
+    <button @click="show = !show">Click</button>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+
+      data: {
+        show: true,
+      },
+    });
+  </script>
+</body>
+</html>
