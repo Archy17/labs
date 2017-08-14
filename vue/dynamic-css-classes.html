@@ -18,6 +18,9 @@
     .red { background-color: red }
     .blue { background-color: blue }
     .green { background-color: green }
+    .yellow { background-color: yellow }
+    .black { background-color: black}
+    .lime { background-color: lime}
   </style>
 </head>
 <body>
@@ -27,7 +30,7 @@
     <div
       class="demo"
       @click="attachRed = !attachRed"
-      :class="{ red: attachRed }"
+      :class="divClasses"
     >
     </div>
     <div
@@ -42,6 +45,22 @@
       :class="{ blue: attachBlue }"
     >
     </div>
+    <div
+      class="demo"
+      @click="attachBlue = !attachBlue"
+      :class="color"
+    >
+    </div>
+    <div
+      class="demo"
+      @click="attachBlue = !attachBlue"
+      :class="[color, { blue: attachBlue }]"
+    >
+    </div>
+
+    <hr>
+
+    <input type="text" v-model="color">
   </div>
 
   <script>
@@ -52,8 +71,21 @@
         attachRed: false,
         attachGreen: false,
         attachBlue: false,
+        color: 'yellow',
+      },
+
+      computed: {
+        divClasses,
       },
     });
+
+    // Computed Properties
+    function divClasses() {
+      return {
+        red: this.attachRed,
+        blue: !this.attachRed,
+      }
+    }
   </script>
 </body>
 </html>
