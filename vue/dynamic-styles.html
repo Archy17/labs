@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dynamic Styles</title>
+  <script src="vue.js"></script>
+  <style>
+    .demo {
+      width: 100px;
+      height: 100px;
+      background-color: lime;
+      display: inline-block;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dynamic Styles</h1>
+
+  <div id="app">
+    <div class="demo" :style="{'background-color': color}"></div>
+    <div class="demo" :style="{backgroundColor: 'dark' + color}"></div>
+    <div class="demo" :style="dynamicStyle"></div>
+
+    <hr>
+
+    <input type="text" v-model="color">
+    <input type="text" v-model="size">
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+
+      data: {
+        color: 'blue',
+        size: 100,
+      },
+
+      computed: {
+        dynamicStyle,
+      },
+    });
+
+    // Computed Properties
+    function dynamicStyle() {
+      return {
+        backgroundColor: this.color,
+        width: this.size + 'px',
+        height: this.size + 'px',
+      }
+    }
+  </script>
+</body>
+</html>
