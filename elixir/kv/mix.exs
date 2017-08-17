@@ -16,6 +16,7 @@ defmodule KV.Mixfile do
   def application do
     [
       extra_applications: [:logger],
+      mod: {KV, []}
     ]
   end
 
