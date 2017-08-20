@@ -50,7 +50,7 @@ defmodule Solution do
     size = get_input() |> List.first |> String.to_integer
     matrix = for x <- 1..size do
       row = get_input()
-      {row, x - 1}
+      {row, x - 1} # Enum.with_index
     end
 
     result = Enum.reduce(matrix, 0, fn({row, index} = _item, acc) ->
