@@ -38,9 +38,9 @@ defmodule Solution do
     size = get_input() |> List.first
     array = get_input()
 
-    IO.puts format_result(check_fractions(array, "positive") / size)
-    IO.puts format_result(check_fractions(array, "negative") / size)
-    IO.puts format_result(check_fractions(array, "zero") / size)
+    IO.puts (check_fractions(array, "positive") / size) |> format_result
+    IO.puts (check_fractions(array, "negative") / size) |> format_result
+    IO.puts (check_fractions(array, "zero") / size) |> format_result
   end
 
   def get_input do
