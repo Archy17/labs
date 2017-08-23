@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Multiple Vue Instances</title>
+  <script src="vue.js"></script>
+</head>
+<body>
+  <div id="app-1">
+    <h1>{{ title }}</h1>
+  </div>
+
+  <div id="app-2">
+    {{ title }}
+    <button @click="changeTitle">Change Instance 1 title</button>
+  </div>
+
+  <script>
+    const vm1 = new Vue({
+      el: '#app-1',
+
+      data: {
+        title: 'Vue Instance #1',
+      },
+    })
+
+    const vm2 = new Vue({
+      el: '#app-2',
+
+      data: {
+        title: 'Vue Instance #2',
+      },
+
+      methods: {
+        changeTitle,
+      }
+    })
+
+    // Methods
+    function changeTitle() {
+      vm1.title = 'New title from vm2 instance'
+    }
+
+    /*** accessing vue instance from plain javascript ***/
+    setInterval(() => {
+      vm1.title += '!'
+    }, 2000)
+  </script>
+</body>
+</html>

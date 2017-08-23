@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Using $refs to access DOM</title>
+  <script src="vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>Using $refs to access DOM</h1>
+
+    <button @click="addText">Add innerText directly</button>
+    <p ref="mainText">
+      Some text here
+    </p>
+  </div>
+
+  <script>
+    const app = new Vue({
+      el: '#app',
+
+      methods: {
+        addText
+      },
+    })
+
+    // Methods
+    function addText() {
+      this.$refs.mainText.innerText += ", and some more text"
+    }
+  </script>
+</body>
+</html>
