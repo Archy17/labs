@@ -35,7 +35,7 @@
 
 defmodule Solution do
   def main do
-    size = get_input() |> List.first
+    size  = get_input() |> List.first
     array = get_input()
 
     IO.puts (check_fractions(array, "positive") / size) |> format_result

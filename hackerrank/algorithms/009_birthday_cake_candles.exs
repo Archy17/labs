@@ -33,9 +33,9 @@
 defmodule Solution do
   def main do
     _quantity = get_input() # unused
-    candles  = get_input() |> Enum.map(&(String.to_integer(&1)))
-    max      = candles |> Enum.max
-    result   = length Enum.filter(candles, &(&1 == max))
+    candles   = get_input() |> Enum.map(&(String.to_integer(&1)))
+    max       = candles |> Enum.max
+    result    = length Enum.filter(candles, &(&1 == max))
 
     IO.puts inspect result
   end

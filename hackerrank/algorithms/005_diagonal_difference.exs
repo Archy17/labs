@@ -47,7 +47,7 @@
 
 defmodule Solution do
   def main do
-    size = get_input() |> List.first |> String.to_integer
+    size   = get_input() |> List.first |> String.to_integer
     matrix = for x <- 1..size do
       row = get_input()
       {row, x - 1} # Enum.with_index

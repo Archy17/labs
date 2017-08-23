@@ -24,7 +24,7 @@
 
 defmodule Solution do
   def main do
-    len = get_input() # unused
+    len   = get_input() # unused
     array = get_input()
 
     Enum.reduce(array, 0, fn (i, acc) -> String.to_integer(i) + acc end)

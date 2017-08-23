@@ -24,7 +24,7 @@
 
 defmodule Solution do
   def main do
-    len   = get_input() # unused
+    len      = get_input() # unused
     integers = get_input()
 
     sum_integers(integers) |> IO.puts
