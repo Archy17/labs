@@ -6,10 +6,10 @@ defmodule SolveMeFirstTest do
   import SolveMeFirst
 
   test "sum two numbers" do
-    assert SolveMeFirst.sum(1, 2) == 3
-    assert SolveMeFirst.sum(-1, -2) == -3
-    assert SolveMeFirst.sum(1, -2) == -1
-    assert SolveMeFirst.sum(10, 32) == 42
-    assert SolveMeFirst.sum(31, 13) == 44
+    assert sum(1, 2) == 3
+    assert sum(-1, -2) == -3
+    assert sum(1, -2) == -1
+    assert sum(10, 32) == 42
+    assert sum(31, 13) == 44
   end
 end

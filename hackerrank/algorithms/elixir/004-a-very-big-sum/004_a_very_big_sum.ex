@@ -22,13 +22,16 @@
 
 # 5000000015
 
-defmodule Solution do
+defmodule VeryBigSum do
   def main do
-    len   = get_input() # unused
-    array = get_input()
-
-    Enum.reduce(array, 0, fn (i, acc) -> String.to_integer(i) + acc end)
+    _len   = get_input() # unused
+    _array = get_input()
+    |> sum_list_strings
     |> IO.puts
+  end
+
+  def sum_list_strings(list) do
+    Enum.reduce(list, 0, fn (i, acc) -> String.to_integer(i) + acc end)
   end
 
   def get_input do
@@ -38,4 +41,4 @@ defmodule Solution do
   end
 end
 
-Solution.main()
+VeryBigSum.main()
