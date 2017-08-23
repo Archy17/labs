@@ -26,12 +26,17 @@ defmodule VeryBigSum do
   def main do
     _len   = get_input() # unused
     _array = get_input()
-    |> sum_list_strings
+    |> list_string_to_int
+    |> sum_list
     |> IO.puts
   end
 
-  def sum_list_strings(list) do
-    Enum.reduce(list, 0, fn (i, acc) -> String.to_integer(i) + acc end)
+  def list_string_to_int(list) do
+    list |> Enum.map(&(String.to_integer(&1)))
+  end
+
+  def sum_list(list) do
+    Enum.reduce(list, 0, fn (num, acc) -> num + acc end)
   end
 
   def get_input do
