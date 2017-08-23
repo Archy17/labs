@@ -22,12 +22,13 @@
 
 # We print the sum of the array's elements, which is: 1 + 2 + 3 + 4 + 10 + 11 = 31.
 
-defmodule Solution do
+defmodule SimpleArraySum do
   def main do
-    len      = get_input() # unused
+    _len     = get_input() # unused
     integers = get_input()
+    |> strings_to_int_list
 
-    sum_integers(integers) |> IO.puts
+    sum_integer_list(integers) |> IO.puts
   end
 
   def get_input do
@@ -35,11 +36,16 @@ defmodule Solution do
     |> String.trim
   end
 
-  defp sum_integers(integers) do
-    integers
+  def strings_to_int_list(string) do
+    string
     |> String.split
-    |> Enum.reduce(0, fn(num, acc) -> String.to_integer(num) + acc end)
+    |> Enum.map(&(String.to_integer(&1)))
+  end
+
+  def sum_integer_list(integers) do
+    integers
+    |> Enum.reduce(0, fn(num, acc) -> num + acc end)
   end
 end
 
-Solution.main()
+SimpleArraySum.main()

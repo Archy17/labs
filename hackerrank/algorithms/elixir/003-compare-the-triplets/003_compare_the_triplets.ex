@@ -37,10 +37,10 @@
 
 # 1 1
 
-defmodule Solution do
+defmodule CompareTheTriplets do
   def main do
-    a = Solution.get_list
-    b = Solution.get_list
+    a = get_list()
+    b = get_list()
 
     compare(a, b) |> IO.puts
   end
@@ -64,4 +64,4 @@ defmodule Solution do
   end
 end
 
-Solution.main()
+CompareTheTriplets.main()

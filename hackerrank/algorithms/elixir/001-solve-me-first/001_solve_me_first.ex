@@ -1,4 +1,4 @@
-defmodule Solution do
+defmodule SolveMeFirst do
   def main do
     a = get_input()
     b = get_input()
@@ -15,4 +15,4 @@ defmodule Solution do
   end
 end
 
-Solution.main()
+SolveMeFirst.main()
