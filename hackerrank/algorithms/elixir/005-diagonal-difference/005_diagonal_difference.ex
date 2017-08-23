@@ -45,19 +45,30 @@
 
 # Difference: |4 - 19| = 15
 
-defmodule Solution do
+defmodule DiagonalDifference do
   def main do
-    size   = get_input() |> List.first |> String.to_integer
-    matrix = for x <- 1..size do
+    size = get_input()
+    |> List.first
+    |> String.to_integer
+
+    size
+    |> matrix_gen
+    |> diagonal_sum(size)
+    |> abs
+    |> IO.puts
+  end
+
+  def matrix_gen(size) do
+    for x <- 1..size do
       row = get_input()
       {row, x - 1} # Enum.with_index
     end
+  end
 
-    result = Enum.reduce(matrix, 0, fn({row, index} = _item, acc) ->
+  def diagonal_sum(matrix, size) do
+    Enum.reduce(matrix, 0, fn({row, index} = _item, acc) ->
       acc + get_value(row, index) - get_value(row, size - (index + 1))
     end)
-
-    IO.puts abs(result)
   end
 
   def get_input do
@@ -72,4 +83,4 @@ defmodule Solution do
   end
 end
 
-Solution.main()
+DiagonalDifference.main()
