@@ -21,29 +21,32 @@
 # 19:05:45
 
 defmodule TimeConversion do
-  def main do
-    time = IO.gets("")
-    |> String.trim
-    |> converter
-    |> IO.puts
+  def main(input) do
+    input |> converter
   end
 
   def converter(input) do
-    cond do
-      input == "12:00:00AM" ->
-        "00:00:00"
+    [hours, minutes, seconds] = String.split(input, ":")
+    period = String.slice(seconds, 2..3)
+    seconds = String.slice(seconds, 0..1)
+    formated_hour = cond do
+      period == "AM" && hours == "12" ->
+        "00"
 
-      input == "12:00:00PM" ->
-        "12:00:00"
+      period == "AM" ->
+        hours
 
-      true ->
-        to_military_format(input)
+      period == "PM" && hours == "12" ->
+        "12"
+
+      period == "PM" ->
+        hours
+        |> String.to_integer |> Kernel.+(12) |> to_string
     end
-  end
 
-  def to_military_format(input) do
-
+    "#{formated_hour}:#{minutes}:#{seconds}"
   end
 end
 
-TimeConversion.main()
+input = IO.gets("") |> String.trim
+TimeConversion.main(input) |> IO.puts
