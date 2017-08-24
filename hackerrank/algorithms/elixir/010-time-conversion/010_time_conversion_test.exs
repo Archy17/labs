@@ -4,7 +4,7 @@ defmodule TimeConversionTest do
   use ExUnit.Case
   import TimeConversion
 
-  test "Convert 12-hour time format to 24-hour" do
+  test "Convert 12-hour time to 24-hour format" do
     assert main("12:00:00AM") == "00:00:00"
     assert main("12:33:11AM") == "00:33:11"
 

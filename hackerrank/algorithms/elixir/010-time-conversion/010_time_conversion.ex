@@ -40,8 +40,7 @@ defmodule TimeConversion do
         "12"
 
       period == "PM" ->
-        hours
-        |> String.to_integer |> Kernel.+(12) |> to_string
+        hours |> String.to_integer |> Kernel.+(12) |> to_string
     end
 
     "#{formated_hour}:#{minutes}:#{seconds}"
