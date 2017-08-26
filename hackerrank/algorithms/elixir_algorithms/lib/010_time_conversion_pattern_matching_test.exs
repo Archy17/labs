@@ -1,6 +1,6 @@
-defmodule TimeConversionTest do
+defmodule TimeConversionPatternTest do
   use ExUnit.Case
-  import TimeConversion
+  import TimeConversionPattern
 
   test "Convert 12-hour time to 24-hour format" do
     assert main("12:00:00AM") == "00:00:00"
