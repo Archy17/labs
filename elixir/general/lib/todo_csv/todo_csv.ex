@@ -1,24 +1,32 @@
-# init
-# read (import)
-# create
-# update
-# delete
-defmodule TodoList.CsvImporter do
-  def init, do: read("todos.csv")
+defmodule TodoCSV do
+  def init(path) do
+    path
+    |> read_file!
+    |> format_output
+    |> show_all_todos
+  end
 
-  def read(path) do
+  def read_file!(path) do
 
   end
 
-  def create(todo, entry) do
+  def show_all_todos(todo_list) do
 
   end
 
-  def update(todo, id, entr) do
+  def show_todo(todo_list, id) do
 
   end
 
-  def delete(todo, id) do
+  def add_todo(todo_list, todo) do
+
+  end
+
+  def update_todo(todo_list, id, todo) do
+
+  end
+
+  def delete_todo(todo_list, id) do
 
   end
 end
