@@ -1,5 +1,5 @@
 defmodule TodoList do
-  defstruct last_id: 1, todos: %{}
+  defstruct last_id: 0, todos: %{}
   def init(path) do
     path
     |> read_file!
@@ -18,6 +18,9 @@ defmodule TodoList do
       id = String.to_integer(id)
       Map.put(acc, id, %Todo{id: id, task: task, date: date})
     end)
+    last_id = Map.keys(todos) |> Enum.max
+
+    %TodoList{last_id: last_id, todos: todos}
   end
 
   def format_output(input) do
