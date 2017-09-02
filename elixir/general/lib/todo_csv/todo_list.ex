@@ -87,7 +87,11 @@ defmodule TodoList do
     %TodoList{todo_list | todos: updated_todos}
   end
 
-  # def delete_todo(todo_list, id) do
+  def delete_todo(%{todos: todos} = todo_list, id) do
+    new_todos = Map.delete(todos, id)
 
-  # end
+    persist_todos(new_todos)
+
+    %TodoList{todo_list | todos: new_todos}
+  end
 end
