@@ -35,6 +35,7 @@ defmodule TodoList do
 
   defp format_to_print(todo_list) do
     todo_list
+    |> format_output
     |> Stream.map(fn(todo) ->
       [date, task, id] = String.split(todo, ",")
 
@@ -42,16 +43,23 @@ defmodule TodoList do
     end)
   end
 
-  def show_all_todos(todo_list) do
-    todo_list.todos
-    |> format_output
+  defp print_todos(todos) do
+    todos
     |> format_to_print
     |> Enum.each(&IO.puts/1)
   end
 
-  # def show_todo(todo_list, id) do
+  def show_all_todos(todo_list) do
+    todo_list.todos |> print_todos
+  end
 
-  # end
+  def show_todo(%{todos: todos}, todo_id) do
+    filter_todos = fn{_key, %{id: id, task: _task, date: _date}} ->
+      todo_id == id
+    end
+
+    Enum.filter(todos, filter_todos) |> print_todos
+  end
 
   # def add_todo(todo_list, todo) do
 
