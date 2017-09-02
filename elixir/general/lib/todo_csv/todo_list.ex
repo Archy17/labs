@@ -63,21 +63,29 @@ defmodule TodoList do
     Enum.filter(todos, filter_todos) |> print_todos
   end
 
+  defp persist_todos(todos) do
+    content = todos |> format_output |> Enum.map(&(&1 <> "\n"))
+    File.write!(@path, content)
+  end
+
   def add_todo(%{last_id: last_id, todos: todos} = todo_list, task, date) do
     current_id = last_id + 1
     new_todo   = %Todo{id: current_id, task: task, date: date}
     new_todos  = Map.put(todos, current_id, new_todo)
 
-    # Persist new todo in the csv file
-    content = new_todos |> format_output |> Enum.map(&(&1 <> "\n"))
-    File.write!(@path, content)
+    persist_todos(new_todos)
 
     %TodoList{todo_list | last_id: current_id, todos: new_todos}
   end
 
-  # def update_todo(todo_list, id, todo) do
+  def update_todo(%{todos: todos} = todo_list, id, key, value) do
+    updated_todo  = Map.put(todos[id], String.to_atom(key), value)
+    updated_todos = Map.put(todos, id, updated_todo)
 
-  # end
+    persist_todos(updated_todos)
+
+    %TodoList{todo_list | todos: updated_todos}
+  end
 
   # def delete_todo(todo_list, id) do
 
