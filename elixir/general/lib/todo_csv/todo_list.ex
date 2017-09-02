@@ -1,15 +1,23 @@
-defmodule TodoCSV do
+defmodule TodoList do
+  defstruct last_id: 1, todos: %{}
   def init(path) do
     path
     |> read_file!
-    |> format_output
-    |> show_all_todos
+    |> format_to_work
   end
 
   def read_file!(path) do
     path
     |> File.stream!
     |> Stream.map(&String.replace(&1, "\n", ""))
+  end
+
+  def format_to_work(input) do
+    todos = Enum.reduce(input, %{}, fn(el, acc) ->
+      [date, task, id] = String.split(el, ",")
+      id = String.to_integer(id)
+      Map.put(acc, id, %Todo{id: id, task: task, date: date})
+    end)
   end
 
   def format_output(input) do
