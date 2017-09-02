@@ -1,43 +1,51 @@
 defmodule TodoList do
   defstruct last_id: 0, todos: %{}
-  def init(path) do
+  def init(path \\ "lib/todo_csv/todos.csv") do
     path
     |> read_file!
     |> format_to_work
   end
 
-  def read_file!(path) do
+  defp read_file!(path) do
     path
     |> File.stream!
     |> Stream.map(&String.replace(&1, "\n", ""))
   end
 
-  def format_to_work(input) do
-    todos = Enum.reduce(input, %{}, fn(el, acc) ->
+  defp format_to_work(input) do
+    format_todos = fn(el, acc) ->
       [date, task, id] = String.split(el, ",")
-      id = String.to_integer(id)
+      id               = String.to_integer(id)
+
       Map.put(acc, id, %Todo{id: id, task: task, date: date})
-    end)
+    end
+
+    todos   = Enum.reduce(input, %{}, format_todos)
     last_id = Map.keys(todos) |> Enum.max
 
     %TodoList{last_id: last_id, todos: todos}
   end
 
-  def format_output(input) do
-    input
-    |> Stream.map(&String.split(&1, ","))
-    |> Stream.map(&format_row/1)
+  defp format_output(todos) do
+    todos
+    |> Stream.map(fn{_key, %Todo{date: date, id: id, task: task}} ->
+      "#{date},#{task},#{id}"
+    end)
   end
 
-  def format_row([date, task, id]) do
-    # Task: Name of the task
-    # Date: YYYY/MM/DD
-    # Task ID: 00
-    "Task: #{task}\nDate: #{date}\nTask ID: #{id}\n"
+  defp format_to_print(todo_list) do
+    todo_list
+    |> Stream.map(fn(todo) ->
+      [date, task, id] = String.split(todo, ",")
+
+      "Task: #{task}\nDate: #{date}\nTask ID: #{id}\n"
+    end)
   end
 
   def show_all_todos(todo_list) do
-    todo_list
+    todo_list.todos
+    |> format_output
+    |> format_to_print
     |> Enum.each(&IO.puts/1)
   end
 
