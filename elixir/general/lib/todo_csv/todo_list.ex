@@ -1,7 +1,11 @@
 defmodule TodoList do
   defstruct last_id: 0, todos: %{}
 
-  @path Path.join(["lib", "todo_csv", "todos.csv"])
+  @path_env %{
+    dev: ["lib", "todo_csv", "todos.csv"],
+    test: ["lib", "todo_csv", "todos_test.csv"]
+  }
+  @path Path.join(@path_env[Mix.env])
 
   ########## Public functions
   def init do
