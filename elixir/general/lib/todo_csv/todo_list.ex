@@ -1,7 +1,9 @@
 defmodule TodoList do
   defstruct last_id: 0, todos: %{}
-  @path "lib/todo_csv/todos.csv"
 
+  @path Path.join(["lib", "todo_csv", "todos.csv"])
+
+  ########## Public functions
   def init do
     @path
     |> read_file!
@@ -47,6 +49,7 @@ defmodule TodoList do
     Enum.filter(todos, filter_todos) |> print_todos
   end
 
+  ########## Private functions
   defp read_file!(path) do
     path
     |> File.stream!
