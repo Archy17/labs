@@ -1,23 +1,31 @@
 <template>
   <div>
+  <p>
     Server status: {{ status }}
+  </p>
+
+  <hr>
+
+  <button @click="changeStatus">
+    Change Status
+  </button>
   </div>
 </template>
 
 <script>
-// export default {
-//   data: () => ({
-//     status: 'normal',
-//   }),
+export default {
+  data: () => ({
+    status: 'normal',
+  }),
 
-//   methods: {
-//     changeStatus
-//   },
-// }
+  methods: {
+    changeStatus
+  },
+}
 
-// // Methods
-// function changeStatus() {
-//   this.status = this.status == 'normal' ? 'disconnected' : 'normal'
-// }
+// Methods
+function changeStatus() {
+  this.status = this.status == 'normal' ? 'critical' : 'normal'
+}
 </script>
 
