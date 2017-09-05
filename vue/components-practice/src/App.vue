@@ -4,7 +4,10 @@
 
     <hr>
 
-    <servers-list></servers-list>
+    <div class="row">
+      <servers-list></servers-list>
+      <servers-detail></servers-detail>
+    </div>
 
     <hr>
 
@@ -15,6 +18,7 @@
 <script>
 import AppHeader from './AppHeader.vue'
 import ServersList from './ServersList.vue'
+import ServersDetail from './ServersDetail.vue'
 import AppFooter from './AppFooter.vue'
 
 export default {
@@ -23,6 +27,7 @@ export default {
   components: {
     'app-header': AppHeader,
     'servers-list': ServersList,
+    'servers-detail': ServersDetail,
     'app-footer': AppFooter,
   },
 }
