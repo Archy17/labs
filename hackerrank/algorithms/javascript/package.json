@@ -1,0 +1,14 @@
+{
+  "name": "algorithms-js",
+  "version": "1.0.0",
+  "description": "HackerRank algorithms",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "author": "Eric Douglas",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^21.1.0"
+  }
+}
