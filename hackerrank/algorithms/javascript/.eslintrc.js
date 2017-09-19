@@ -10,6 +10,8 @@ module.exports = {
     "jest/globals": true
   },
   "rules": {
-    semi: "off"
+    "semi": "off",
+    "no-use-before-define": "off",
+    "no-underscore-dangle": "off"
   }
 };
