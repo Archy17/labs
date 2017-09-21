@@ -9,8 +9,3 @@ defmodule ListReplication do
     |> List.flatten
   end
 end
-
-# For HackerRank
-# n = IOHelper.get()
-# list = IOHelper.get(n)
-# ListReplication.main(list, n)
