@@ -4,10 +4,10 @@ defmodule IOHelper do
   """
 
   def get, do: "" |> IO.gets |> String.trim
-  def get n do
+  def get(n) do
     Enum.map(1..n, fn _i -> get() end)
   end
-  def get n, cb do
+  def get(n, cb) do
     n
     |> get
     |> Enum.map(cb)
