@@ -29,8 +29,10 @@ defmodule VeryBigSum do
   @moduledoc """
   Sum a list of integers
   """
+  @spec main([number]) :: number
   def main(list), do: list |> sum_list()
 
+  @spec sum_list([number]) :: number
   defp sum_list(list), do: Enum.reduce(list, 0, fn (num, acc) -> num + acc end)
 end
 

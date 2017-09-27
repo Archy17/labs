@@ -40,6 +40,7 @@ defmodule PlusMinus do
   Find the fraction of positive, negative and zeroes in a given list
   """
 
+  @spec main([number], number) :: [String.t]
   def main(list, size) do
     [
       check_fractions(list, size, "positive"),
@@ -48,6 +49,7 @@ defmodule PlusMinus do
     ]
   end
 
+  @spec check_fractions([number], number, String.t) :: String.t
   defp check_fractions(list, size, type) do
     add_type = fn(el, acc) ->
       if (check_num(el) == type), do: acc + 1, else: acc
@@ -59,10 +61,12 @@ defmodule PlusMinus do
     |> format_result()
   end
 
+  @spec check_num(number) :: String.t
   defp check_num(num) when num > 0, do: "positive"
   defp check_num(num) when num < 0, do: "negative"
   defp check_num(num) when num == 0, do: "zero"
 
+  @spec format_result(number) :: String.t
   defp format_result(value), do: :erlang.float_to_binary(value, [decimals: 6])
 end
 

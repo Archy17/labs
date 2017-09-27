@@ -43,18 +43,27 @@ defmodule DiagonalDifference do
   of the matrix's diagonals as a single integer.
   """
 
+  @spec main(
+    matrix :: [{row :: [String.t], index :: integer}],
+    size :: integer
+  ) :: integer
   def main(matrix, size) do
     matrix
     |> diagonal_sum(size)
     |> abs
   end
 
+  @spec diagonal_sum(
+    matrix :: [{[String.t], integer}],
+    size :: integer
+  ) :: integer
   defp diagonal_sum(matrix, size) do
     Enum.reduce(matrix, 0, fn({row, index} = _item, acc) ->
       acc + get_value(row, index) - get_value(row, size - (index + 1))
     end)
   end
 
+  @spec get_value([String.t], integer) :: integer
   defp get_value(row, index) do
     row
     |> Enum.at(index)

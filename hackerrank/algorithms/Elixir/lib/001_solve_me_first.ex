@@ -22,9 +22,10 @@ defmodule SolveMeFirst do
   @moduledoc """
   Sum two numbers
   """
+  @spec main(a :: number, b :: number) :: number
   def main(a, b), do: sum(a, b)
 
-  def sum(a, b), do: a + b
+  defp sum(a, b), do: a + b
 end
 
 # For HackerRank

@@ -32,12 +32,14 @@ defmodule SimpleArraySum do
   Sum all integers in a list
   """
 
+  @spec main([number]) :: number
   def main(list) do
     list
     |> sum_list()
   end
 
-  def sum_list(list) do
+  @spec sum_list([number]) :: number
+  defp sum_list(list) do
     list
     |> Enum.reduce(0, fn(num, acc) -> num + acc end)
   end

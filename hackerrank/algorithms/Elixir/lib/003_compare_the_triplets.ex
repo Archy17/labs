@@ -33,12 +33,14 @@ defmodule CompareTheTriplets do
   Compare points between two players passed in a list of integers
   """
 
+  @spec main([integer], [integer]) :: String.t
   def main(list1, list2) do
     list1
     |> compare(list2)
     |> format_to_print()
   end
 
+  @spec compare([integer], [integer]) :: [tuple]
   defp compare(list1, list2) do
     Enum.reduce(List.zip([list1, list2]), {0, 0}, fn({x, y}, {ax, ay}) ->
       cond do
@@ -49,6 +51,7 @@ defmodule CompareTheTriplets do
     end)
   end
 
+  @spec format_to_print(tuple) :: String.t
   defp format_to_print({x, y}) do
     "#{x} #{y}"
   end
