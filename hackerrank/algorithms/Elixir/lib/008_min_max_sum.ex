@@ -42,3 +42,11 @@ defmodule MinMaxSum do
     {sum_list.(min_list), sum_list.(max_list)}
   end
 end
+
+# For HackerHank
+# OBS: HackerRank doesn't accept the Enum.chunk_every for now
+# so I used Enum.chunk(4, 1) there
+#
+# values = IOHelper.get() |> String.split() |> Enum.map(&String.to_integer/1)
+# {min, max} = MinMaxSum.main(values)
+# IO.puts "#{min} #{max}"
